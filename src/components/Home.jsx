@@ -1,104 +1,59 @@
-import "./styles.css";
-import Plx from "react-plx";
+import { useEffect, useState } from "react";
 
-export default function App() {
-  return (
-    <div>
-      <Plx
-        parallaxData={[
-          {
-            start: 0,
-            end: 700,
-            easing: "ease-in",
-            properties: [
-              {
-                startValue: 1,
-                endValue: 1.6,
-                property: "scale"
-              }
-            ]
-          }
-        ]}
-        style={{
-          position: "fixed",
-          left: 0,
-          top: 0,
-          width: "100%",
-          zIndex: 100
-        }}
-      >
-        <img style={{ width: "100%" }} src="bg.png" alt="foreground" />
-      </Plx>
-      <Plx
-        parallaxData={[
-          {
-            start: 0,
-            end: 800,
-            properties: [
-              {
-                startValue: 1,
-                endValue: 1.18,
-                property: "scale"
-              }
-            ]
-          }
-        ]}
-        style={{  
-          position: "fixed",
-          left: 0,
-          top: 0,
-          width: "100%"
-        }}
-      >
-        <img style={{ width: "100%" }} src="background.jpg" alt="background" />
-      </Plx>
-      <Plx
-        parallaxData={[
-          {
-            start: 0,
-            end: 400,
-            properties: [
-              {
-                startValue: 1,
-                endValue: 0,
-                property: "opacity"
-              }
-            ]
-          }
-        ]}
-        style={{
-          position: "fixed",
-          left: 0,
-          top: "26vw",
-          width: "100%"
-        }}
-      >
-        <img
-          style={{
-            width: "30vw"
-          }}
-          src="/text-img.webp"
-          alt="Goonies"
-        />
-      </Plx>
-      <div
-        style={{
-          position: "fixed",
-          lefft: 0,
-          top: 0,
-          zIndex: 200,
-          paddingTop: "56%",
-          height: "400vh",
-          width: "100%"
-        }}
-      >
-        <div
-          style={{
-            background: "#000",
-            height: "100%"
-          }}
-        ></div>
-      </div>
-    </div>
-  );
+
+export default function Home() {
+
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+    const [ypos, setypos] = useState(window.innerHeight);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+            setWindowHeight(window.innerHeight);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        const handleWindowScroll = () => {
+            setypos((window.scrollY/windowHeight)*2+1);
+        };
+
+        window.addEventListener('scroll', handleWindowScroll);
+
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('scroll', handleWindowScroll);
+
+        }
+    }, []);
+    console.log(windowWidth,ypos/10);
+
+    return (        
+            <div className=" h-[200vh] flex justify-center items-top z-[-1] w-full"
+            >
+            
+
+
+                <img src="./assets/background.jpg"
+                    className=" fixed h-[100vh] w-full object-cover z-[-1] "
+                    style={{
+                        scale:1+(ypos/5)+''
+                    }}
+
+                />
+
+                <img src="./assets/bg.png" className=" fixed h-[100vh] w-full object-cover z-[-1] " 
+                style={{
+                    scale:ypos+''
+                }}
+                />
+
+                <div className=" fixed text-[50px] text-white  drop-shadow-lg shadow-black" >
+                    welcome!
+                </div>
+            </div>
+        
+    );
 }
