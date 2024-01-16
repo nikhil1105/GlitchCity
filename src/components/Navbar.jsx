@@ -1,5 +1,5 @@
 import React from 'react'
-import {hamburger} from '../Hacakthon/assets'
+
 
 const Nav = () => {
   return (
@@ -12,7 +12,7 @@ const Nav = () => {
             <li><a href="/" className='font-montserrat leading-normal text-lg text-blue-600 font-bold'>Contact</a></li>
         </ul>
         <div className='hidden max-lg:block'>
-            <img src={hamburger} alt="Hamburger" 
+            <img src="./assets/hamburger.svg" alt="Hamburger" 
             width={25}
             height={25}/>
         </div>     
