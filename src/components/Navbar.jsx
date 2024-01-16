@@ -1,25 +1,55 @@
-import React from 'react'
-
+import React, { useState } from 'react';
 
 const Nav = () => {
-  return (
-   <header className='padding-x py-8 absolute z-10 w-full '>
-    <nav className='flex justify-between items-center max-container'>
-        <a href="/" className='ml-4 font-bold text-blue-700'>Logo</a> 
-        <ul className='flex-1 flex justify-center items-center gap-16 max-lg:hidden'>
-            <li><a href="/" className='font-montserrat leading-normal text-lg text-blue-600 font-bold'>Home</a></li>
-            <li><a href="/" className='font-montserrat leading-normal text-lg text-blue-600 font-bold'>About</a></li>
-            <li><a href="/" className='font-montserrat leading-normal text-lg text-blue-600 font-bold'>Contact</a></li>
-        </ul>
-        <div className='hidden max-lg:block'>
-            <img src="./assets/hamburger.svg" alt="Hamburger" 
-            width={25}
-            height={25}/>
-        </div>     
-            
-    </nav>
-   </header>
-  )
-}
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-export default Nav
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  return (
+    <header className='padding-x py-8 absolute z-10 w-full'>
+      <nav className='flex justify-between items-center max-container'>
+        <a href="/" className='ml-4 font-bold text-blue-700'>
+          Logo
+        </a>
+        <ul className={`lg:flex justify-center items-center gap-16 ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
+          <li>
+            <a
+              href="/"
+              className='font-montserrat leading-normal text-lg text-blue-600 font-bold hover:text-white'
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="/"
+              className='font-montserrat leading-normal text-lg text-blue-600 font-bold'
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="/"
+              className='font-montserrat leading-normal text-lg text-blue-600 font-bold'
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+        <div className='lg:hidden'>
+          <img
+            src="./assets/hamburger.svg"
+            alt="Hamburger"
+            className='w-[28px] h-[28px] object-contain cursor-pointer'
+            onClick={toggleMobileMenu}
+          />
+        </div>
+      </nav>
+    </header>
+  );
+};
+
+export default Nav;
