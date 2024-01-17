@@ -37,6 +37,16 @@ export default function Home() {
 
         <div className=" fixed h-[100vh] w-full object-cover flex flex-col items-center justify-center " >
 
+            <div className="fixed h-[100vh] opacity-[1] w-full object-cover z-[-1]">
+            <img src="./assets/background.jpg"
+                className=" fixed h-[100vh] opacity-[1] w-full object-cover z-[-1] "
+                style={{
+                    scale: 1 + (ypos / 5) + ''
+                }}
+
+            />
+            </div>
+            <div className="imgGlitch opacity-[0.5] left-1 fixed h-[100vh] w-full object-cover z-[-1]">
             <img src="./assets/background.jpg"
                 className=" fixed h-[100vh] w-full object-cover z-[-1] "
                 style={{
@@ -44,6 +54,8 @@ export default function Home() {
                 }}
 
             />
+            </div>
+            
 
             <img src="./assets/bg.png" className=" fixed h-[100vh] w-full object-cover z-[-1] "
                 style={{
@@ -72,10 +84,10 @@ export default function Home() {
                 <span aria-hidden>GlitchCity</span>
                 <span aria-hidden>GlitchCity</span>
             </div>
-            <div className=" top-96 fixed">
+            <div className="  top-96 fixed">
             <Link to='*'  >
-            <div className={` ${ypos<2.2?'hidden':''} z-[1] cursor-pointer bg-[#4e42f5]  w-[100px] h-[100px] rounded-full  flex items-center justify-center `} >
-                <img  src="../assets/play-button1.png" className="h-[90px] w-[90px]" />
+            <div className={` ${ypos<2.2?'hidden':''}  z-[1] cursor-pointer bg-[#4e42f5]  w-[100px] h-[100px] rounded-full  flex items-center justify-center `} >
+                <img  src="../assets/play-button1.png" className=" imgGlitch mt-[4px] ml-[4px] h-[90px] w-[90px]" />
                 
             </div>
             
