@@ -32,10 +32,10 @@ export default function Home() {
     console.log(windowWidth, ypos / 10);
 
     return (
-        <div className=" h-[200vh] flex justify-center items-top text-center z-[-1] w-full"
+        <div className=" h-[200vh] flex justify-center items-top text-center w-full z-0 "
         >
 
-
+        <div className=" fixed h-[100vh] w-full object-cover z-[-1] flex flex-col items-center justify-center " >
 
             <img src="./assets/background.jpg"
                 className=" fixed h-[100vh] w-full object-cover z-[-1] "
@@ -51,30 +51,37 @@ export default function Home() {
                 }}
             />
             
-            <div className={` ${ypos<1.2?'hidden':''} top-20 flex items-center justify-center  glitch font-extrabold  fixed text-[80px] tracking-wider	 uppercase`} >
+            <div className={` ${ypos<1.2?'hidden':''} top-20 flex items-center justify-center  glitch font-extrabold  fixed sm:text-[80px] text-[60px] tracking-wider	 uppercase`} >
                 <span aria-hidden >welcome!</span>
                 <span aria-hidden>welcome!</span>
                 <span aria-hidden>welcome!</span>
             </div>
-            <div className={` ${ypos<1.5?'hidden':''} top-40 flex items-center justify-center  glitch font-extrabold  fixed text-[50px] tracking-wider	 uppercase text-white`} >
+            <div className={` ${ypos<1.5?'hidden':''} top-40 flex items-center justify-center  glitch font-extrabold  fixed sm:text-[50px] text-[30px] tracking-wider uppercase text-white`} >
                 <span aria-hidden >to</span>
                 <span aria-hidden>to</span>
                 <span aria-hidden>to</span>
             </div>
-            <div className={` ${ypos<1.8?'hidden':''} top-60 flex items-center justify-center  glitch font-extrabold  fixed text-[60px] tracking-wider text-[#7983d9] uppercase`} >
+            <div className={` ${ypos<1.8?'hidden':''} top-60 flex items-center justify-center  glitch font-extrabold  fixed sm:text-[50px] text-[30px] tracking-wider uppercase text-white`} >
+                <span aria-hidden >the</span>
+                <span aria-hidden>the</span>
+                <span aria-hidden>the</span>
+            </div>
+            <div className={` ${ypos<2?'hidden':''} top-80 text-[40px] flex items-center justify-center  glitch font-extrabold  fixed sm:text-[55px] tracking-wider text-[#FCEE0A] uppercase`} >
 
                 <span aria-hidden >GlitchCity</span>
                 <span aria-hidden>GlitchCity</span>
                 <span aria-hidden>GlitchCity</span>
             </div>
-            
-            <Link to='*' >
-            <div className={` lg:left-[46vw] ${ypos<2?'hidden':''}  bg-[#4e42f5]  w-[100px] h-[100px] rounded-full fixed top-[50vh] left-[44vw] flex items-center justify-center `} >
+
+            <Link to='*' className=" z-[1]  top-96 fixed" >
+            <div className={` ${ypos<2.2?'hidden':''} z-10 cursor-pointer bg-[#4e42f5]  w-[100px] h-[100px] rounded-full  flex items-center justify-center `} >
                 <img  src="../assets/play-button1.png" className="h-[90px] w-[90px]" />
                 
             </div>
             
             </Link>
+            
+            </div>
         </div>
 
     );
