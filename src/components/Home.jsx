@@ -43,11 +43,10 @@ export default function Home() {
                 style={{
                     scale: 1 + (ypos / 5) + ''
                 }}
-
             />
             
             <img src="./assets/gbg/gbg1.png"
-                className=" fixed h-[100vh] w-full object-cover z-[-1] "
+                className=" fixed h-[100vh] opacity-0 w-full object-cover z-[-1] "
                 style={{
                     scale: 1 + (ypos / 5) + ''
                 }}
@@ -55,7 +54,7 @@ export default function Home() {
             />
 
             <img src="./assets/gbg/gbg2.png"
-                className=" fixed h-[100vh]  w-full object-cover z-[-1] "
+                className=" fixed h-[100vh] opacity-0  w-full object-cover z-[-1] "
                 style={{
                     scale: 1 + (ypos / 5) + ''
                 }}
@@ -64,7 +63,7 @@ export default function Home() {
                         
 
             <img src="./assets/gbg/gbg3.png"
-                className=" fixed h-[100vh] w-full object-cover z-[-1] "
+                className=" fixed h-[100vh] opacity-0 w-full object-cover z-[-1] "
                 style={{
                     scale: 1 + (ypos / 5) + ''
                 }}
