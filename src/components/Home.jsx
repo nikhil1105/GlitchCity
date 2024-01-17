@@ -32,10 +32,10 @@ export default function Home() {
     console.log(windowWidth, ypos / 10);
 
     return (
-        <div className=" h-[200vh] flex justify-center items-top text-center w-full z-0 "
+        <div className=" h-[200vh] flex justify-center items-top text-center w-full "
         >
 
-        <div className=" fixed h-[100vh] w-full object-cover z-[-1] flex flex-col items-center justify-center " >
+        <div className=" fixed h-[100vh] w-full object-cover flex flex-col items-center justify-center " >
 
             <img src="./assets/background.jpg"
                 className=" fixed h-[100vh] w-full object-cover z-[-1] "
@@ -72,14 +72,15 @@ export default function Home() {
                 <span aria-hidden>GlitchCity</span>
                 <span aria-hidden>GlitchCity</span>
             </div>
-
-            <Link to='*' className=" z-[1]  top-96 fixed" >
-            <div className={` ${ypos<2.2?'hidden':''} z-10 cursor-pointer bg-[#4e42f5]  w-[100px] h-[100px] rounded-full  flex items-center justify-center `} >
+            <div className=" top-96 fixed">
+            <Link to='*'  >
+            <div className={` ${ypos<2.2?'hidden':''} z-[1] cursor-pointer bg-[#4e42f5]  w-[100px] h-[100px] rounded-full  flex items-center justify-center `} >
                 <img  src="../assets/play-button1.png" className="h-[90px] w-[90px]" />
                 
             </div>
             
             </Link>
+            </div>
             
             </div>
         </div>
