@@ -29,7 +29,6 @@ export default function Home() {
 
         }
     }, []);
-    console.log(windowWidth, ypos / 10);
 
     return (
         <div className=" h-[200vh] flex justify-center items-top text-center w-full "
@@ -37,22 +36,38 @@ export default function Home() {
 
         <div className=" fixed h-[100vh] w-full object-cover flex flex-col items-center justify-center " >
 
-            <div className="fixed h-[100vh] opacity-[1] w-full object-cover z-[-1]">
+        <div className=" imgGlitch fixed h-[100vh] opacity-[1] w-full object-cover z-[-1]">
+            
             <img src="./assets/background.jpg"
-                className=" fixed h-[100vh] opacity-[1] w-full object-cover z-[-1] "
+                className=" fixed h-[100vh]  w-full object-cover z-[-1] "
                 style={{
                     scale: 1 + (ypos / 5) + ''
                 }}
 
             />
-            </div>
-            <div className="imgGlitch opacity-[0.5] left-1 fixed h-[100vh] w-full object-cover z-[-1]">
-            <img src="./assets/background.jpg"
+            
+            <img src="./assets/gbg/gbg1.png"
                 className=" fixed h-[100vh] w-full object-cover z-[-1] "
                 style={{
                     scale: 1 + (ypos / 5) + ''
                 }}
 
+            />
+
+            <img src="./assets/gbg/gbg2.png"
+                className=" fixed h-[100vh]  w-full object-cover z-[-1] "
+                style={{
+                    scale: 1 + (ypos / 5) + ''
+                }}
+
+            />
+                        
+
+            <img src="./assets/gbg/gbg3.png"
+                className=" fixed h-[100vh] w-full object-cover z-[-1] "
+                style={{
+                    scale: 1 + (ypos / 5) + ''
+                }}
             />
             </div>
             
@@ -87,7 +102,7 @@ export default function Home() {
             <div className="  top-96 fixed">
             <Link to='*'  >
             <div className={` ${ypos<2.2?'hidden':''}  z-[1] cursor-pointer bg-[#4e42f5]  w-[100px] h-[100px] rounded-full  flex items-center justify-center `} >
-                <img  src="../assets/play-button1.png" className=" imgGlitch mt-[4px] ml-[4px] h-[90px] w-[90px]" />
+                <img  src="../assets/play-button1.png" className=" imgGlitch h-[90px] w-[90px]" />
                 
             </div>
             
