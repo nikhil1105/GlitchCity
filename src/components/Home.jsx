@@ -9,6 +9,8 @@ export default function Home() {
     const [ypos, setypos] = useState(window.innerHeight);
 
     useEffect(() => {
+        window.scrollTo(0, 1);
+
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
             setWindowHeight(window.innerHeight);
@@ -99,7 +101,7 @@ export default function Home() {
                 <span aria-hidden>GlitchCity</span>
             </div>
             <div className="  top-96 fixed">
-            <Link to='*'  >
+            <Link to='/dashboard'  >
             <div className={` ${ypos<2.2?'hidden':''}  z-[1] cursor-pointer bg-[#4e42f5]  w-[100px] h-[100px] rounded-full  flex items-center justify-center `} >
                 <img  src="../assets/play-button1.png" className=" imgGlitch h-[90px] w-[90px]" />
                 
@@ -109,6 +111,7 @@ export default function Home() {
             </div>
             
             </div>
+           
         </div>
 
     );
