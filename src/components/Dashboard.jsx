@@ -90,15 +90,15 @@ function Dashboard () {
   };
 
   return (
-    <div className='main'>
+    <div className='main  '>
     <div className="App">
-      <h1>My Todos</h1>
+      <h1 className='text-[50px] text-white font-bold ' >Works TO DO</h1>
 
       <div className="todo-wrapper">
 
         <div className="todo-input">
-          <div className="todo-input-item">
-            <label>Title:</label>
+          <div className=" todo-input-item">
+            <label className='text-white' >Title:</label>
             <input
               type="text"
               value={newTodoTitle}
@@ -107,7 +107,7 @@ function Dashboard () {
             />
           </div>
           <div className="todo-input-item">
-            <label>Description:</label>
+            <label className='text-white'>Description:</label>
             <input
               type="text"
               value={newDescription}

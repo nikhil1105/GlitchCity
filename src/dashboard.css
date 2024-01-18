@@ -1,6 +1,6 @@
 .main{
     background-image: url(../public/assets/todoimage.jpeg);
-
+    height: 100vh;
 }
     
     h1{
