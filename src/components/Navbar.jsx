@@ -13,7 +13,7 @@ const Nav = () => {
         <a href="/" className='ml-4 font-bold text-blue-700'>
           Logo
         </a>
-        <ul className={`lg:flex justify-center items-center gap-16 ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
+        <ul className={`lg:flex justify-center items-center gap-16 mr-20 ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
           <li>
             <a
               href="/"
@@ -25,7 +25,7 @@ const Nav = () => {
           <li>
             <a
               href="/"
-              className='font-montserrat leading-normal text-lg text-blue-600 font-bold'
+              className='font-montserrat leading-normal text-lg text-blue-600 font-bold hover:text-white' 
             >
               About
             </a>
@@ -33,7 +33,7 @@ const Nav = () => {
           <li>
             <a
               href="/"
-              className='font-montserrat leading-normal text-lg text-blue-600 font-bold'
+              className='font-montserrat leading-normal text-lg text-blue-600 font-bold hover:text-white'
             >
               Contact
             </a>
