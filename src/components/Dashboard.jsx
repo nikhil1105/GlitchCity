@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import './Todo.css';
+import '../dashboard.css';
 import {AiOutlineDelete} from 'react-icons/ai';
 import {BsCheckLg} from 'react-icons/bs';
-function App () {
+function Dashboard () {
   const [allTodos, setAllTodos] = useState ([]);
   const [newTodoTitle, setNewTodoTitle] = useState ('');
   const [newDescription, setNewDescription] = useState ('');
@@ -187,4 +187,4 @@ function App () {
   );
 }
 
-export default App;
+export default Dashboard;
