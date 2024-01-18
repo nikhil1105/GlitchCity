@@ -80,20 +80,20 @@
 
 .imgGlitch :nth-child(2) {
 
-    animation: imgglitch1 5s infinite steps(1);
+    animation: imgglitch1 3.4s infinite steps(1);
 
 }
 
 .imgGlitch :nth-child(3) {
 
-    animation: imgglitch2 5s infinite steps(1);
+    animation: imgglitch2 3.4s infinite steps(1);
 
 }
 
 
 .imgGlitch :nth-child(4) {
 
-    animation: imgglitch3 5s infinite steps(1);
+    animation: imgglitch3 3.4s infinite steps(1);
 
 }
 
