@@ -1,5 +1,5 @@
 import axios from "axios";
-import { EarthCanvas, StarsCanvas } from './canvas';
+import {  StarsCanvas } from './canvas';
 
 const AuthPage = (props) => {
 

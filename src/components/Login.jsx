@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
-import { EarthCanvas, StarsCanvas } from './canvas';
+import { StarsCanvas } from './canvas';
 
 function Login() {
 

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import '../dashboard.css';
 import {AiOutlineDelete} from 'react-icons/ai';
 import {BsCheckLg} from 'react-icons/bs';
+import { StarsCanvas } from './canvas';
 function Dashboard () {
   const [allTodos, setAllTodos] = useState ([]);
   const [newTodoTitle, setNewTodoTitle] = useState ('');
@@ -14,10 +15,8 @@ function Dashboard () {
       title: newTodoTitle,
       description: newDescription,
     };
-    // console.log (newToDoObj);
     let updatedTodoArr = [...allTodos];
     updatedTodoArr.push (newToDoObj);
-    // console.log (updatedTodoArr);
     setAllTodos (updatedTodoArr);
     localStorage.setItem ('todolist', JSON.stringify (updatedTodoArr));
     setNewDescription ('');
@@ -41,9 +40,7 @@ function Dashboard () {
   const handleToDoDelete = index => {
     let reducedTodos = [...allTodos];
     reducedTodos.splice (index,1);
-    // console.log (index);
 
-    // console.log (reducedTodos);
     localStorage.setItem ('todolist', JSON.stringify (reducedTodos));
     setAllTodos (reducedTodos);
   };
@@ -51,7 +48,6 @@ function Dashboard () {
   const handleCompletedTodoDelete = index => {
     let reducedCompletedTodos = [...completedTodos];
     reducedCompletedTodos.splice (index);
-    // console.log (reducedCompletedTodos);
     localStorage.setItem (
       'completedTodos',
       JSON.stringify (reducedCompletedTodos)
@@ -75,7 +71,6 @@ function Dashboard () {
       completedOn: finalDate,
     };
 
-    // console.log (filteredTodo);
 
     let updatedCompletedList = [...completedTodos, filteredTodo];
     console.log (updatedCompletedList);
@@ -84,23 +79,23 @@ function Dashboard () {
       'completedTodos',
       JSON.stringify (updatedCompletedList)
     );
-    // console.log (index);
 
     handleToDoDelete (index);
   };
 
   return (
-    <div className='main  '>
-    <div className="App">
-      <h1 className='text-[50px] text-white font-bold ' >Works TO DO</h1>
+    <div className='main'>
+    <div className="App flex items-center justify-center flex-col ">
+      <h1 className='text-[50px] text-white pt-16 font-bold ' >Works TO DO</h1>
 
-      <div className="todo-wrapper">
+      <div className="todo-wrapper m-8 bg-[#461ca7] border-4 rounded-xl w-fit border-[#ae09dc9f] bg-opacity-[0.9] ">
 
-        <div className="todo-input">
+        <div className="todo-input flex sm:flex-row flex-col ">
           <div className=" todo-input-item">
             <label className='text-white' >Title:</label>
             <input
               type="text"
+              className='rounded'
               value={newTodoTitle}
               onChange={e => setNewTodoTitle (e.target.value)}
               placeholder="What's the title of your To Do?"
@@ -110,6 +105,7 @@ function Dashboard () {
             <label className='text-white'>Description:</label>
             <input
               type="text"
+              className='rounded'
               value={newDescription}
               onChange={e => setNewDescription (e.target.value)}
               placeholder="What's the description of your To Do?"
@@ -117,7 +113,7 @@ function Dashboard () {
           </div>
           <div className="todo-input-item">
             <button
-              className="primary-btn"
+              className="primary-btn rounded "
               type="button"
               onClick={handleAddNewToDo}
             >
@@ -127,13 +123,13 @@ function Dashboard () {
         </div>
         <div className="btn-area">
           <button
-            className={`secondaryBtn ${isCompletedScreen === false && 'active'}`}
+            className={` rounded secondaryBtn ${isCompletedScreen === false && 'active'}`}
             onClick={() => setIsCompletedScreen (false)}
           >
             To Do
           </button>
           <button
-            className={`secondaryBtn ${isCompletedScreen === true && 'active'}`}
+            className={` rounded m-4 secondaryBtn ${isCompletedScreen === true && 'active'}`}
             onClick={() => setIsCompletedScreen (true)}
           >
             Completed
@@ -143,7 +139,7 @@ function Dashboard () {
 
           {isCompletedScreen === false &&
             allTodos.map ((item, index) => (
-              <div className="todo-list-item" key={index}>
+              <div className="todo-list-item rounded " key={index}>
                 <div>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
@@ -152,12 +148,12 @@ function Dashboard () {
                 <div>
                   <AiOutlineDelete
                     title="Delete?"
-                    className="icon"
+                    className="icon "
                     onClick={() => handleToDoDelete (index)}
                   />
                   <BsCheckLg
                     title="Completed?"
-                    className=" check-icon"
+                    className=" rounded check-icon"
                     onClick={() => handleComplete (index)}
                   />
                 </div>
@@ -174,7 +170,7 @@ function Dashboard () {
                 </div>
                 <div>
                   <AiOutlineDelete
-                    className="icon"
+                    className="icon rounded "
                     onClick={() => handleCompletedTodoDelete (index)}
                   />
                 </div>
@@ -183,6 +179,7 @@ function Dashboard () {
         </div>
       </div>
     </div>
+    <StarsCanvas />
     </div>
   );
 }
