@@ -4,7 +4,7 @@ import Home from './components/Home'
 import { BrowserRouter,Routes , Route } from "react-router-dom";
 import Dashboard from './components/Dashboard';
 import Chatgrp from './components/Chatgrp';
-import Chatbot from './components/Chatbot';
+
 
 
 
@@ -18,7 +18,11 @@ function App() {
         <Route path="/chat" element={<Chatgrp/>}/>
 
 
-        <Route path="/chatbot" element={<Chatbot/>}/>
+
+        
+
+
+        
 
       </Routes>
     </BrowserRouter>
