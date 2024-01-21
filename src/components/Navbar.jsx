@@ -1,45 +1,62 @@
 import React, { useState } from 'react';
+import { Link,useNavigate } from "react-router-dom";
+
 
 const Nav = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate()
+  const isusersign = !!localStorage.getItem('token')
+
+  const handlesignout = () =>{
+    localStorage.removeItem('token')
+    navigate('/login')
+  }
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
-    <header className='padding-x py-8 absolute z-10 w-full'>
-      <nav className='flex justify-between items-center max-container'>
-        <a href="/" className='ml-4 font-bold text-blue-700'>
+    <header className=' py-4 px-4 bg-[#9d46d700] bg-opacity-[0.5] absolute z-10 w-full'>
+      <nav className=' flex justify-between items-center '>
+        <Link to="/" className=' font-bold  text-white'>
           Logo
-        </a>
-        <ul className={`lg:flex justify-center items-center gap-16 mr-20 ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
+        </Link>
+        <ul className={` sm:flex justify-center items-center gap-16 hidden `}>
           <li>
-            <a
-              href="/"
-              className='font-montserrat leading-normal text-lg text-blue-600 font-bold hover:text-white'
+            <Link
+              to='/'
+              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
             >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/"
-              className='font-montserrat leading-normal text-lg text-blue-600 font-bold hover:text-white' 
+            {isusersign?
+            <button
+              onClick={handlesignout}
+              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]' 
             >
-              About
-            </a>
+              logout
+            </button>:
+            <Link
+            to="/login"
+            className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]' 
+          >
+            login
+          </Link>
+            }
           </li>
           <li>
-            <a
+            <Link
               href="/"
-              className='font-montserrat leading-normal text-lg text-blue-600 font-bold hover:text-white'
+              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
             >
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
-        <div className='lg:hidden'>
+        <div className='sm:hidden'>
           <img
             src="./assets/hamburger.svg"
             alt="Hamburger"
@@ -48,6 +65,42 @@ const Nav = () => {
           />
         </div>
       </nav>
+      <div>
+      <ul className={`sm:hidden ${isMobileMenuOpen? '':'hidden'}  absolute top-[60px] right-[30px] bg-slate-500 bg-opacity-[0.5] p-4 rounded-2xl`}>
+          <li>
+            <Link
+              href="/"
+              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+          {isusersign?
+            <button
+              onClick={handlesignout}
+              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]' 
+            >
+              logout
+            </button>:
+            <Link
+            to="/login"
+            className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]' 
+          >
+            login
+          </Link>
+            }
+          </li>
+          <li>
+            <Link
+              href="/"
+              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
+            >
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </div>
     </header>
   );
 };

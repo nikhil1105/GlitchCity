@@ -1,6 +1,7 @@
-.main{
+.main {
     background-image: url(../assets/todoimage.jpeg);
     height: 100vh;
+    filter: brightness(100%);
 }
     
     h1{
