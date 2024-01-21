@@ -1,22 +1,27 @@
-
+import axios from "axios";
 const AuthPage = (props) => {
+
   const onSubmit = (e) => {
     e.preventDefault();
     const { value } = e.target[0];
-    props.onAuth({ username: value, secret: value });
+    axios.post('http://localhost:3001/authenticate',
+    {username:value}
+    ).then(r=>props.onAuth({...r.data,secret:value}))
+    .catch(e=>console.log(e))
   };
 
   return (
-    <div className="flex items-center justify-center bg-[#222020] w-[100vw] h-[100vh] "  >
-      <form onSubmit={onSubmit} className="border p-20 bg-[#8bd9da] rounded-xl">
-        <div className="text-[30px] font-bold text-gray-200 ">Welcome <span className="">👋</span></div>
+    <div className=" main flex items-center justify-center bg-[#222020] w-[100vw] h-[100vh] "  >
+      <form onSubmit={onSubmit} className="border-4 border-[#ae09dc9f] p-20 bg-[#4c20b1] bg-opacity-[0.7] rounded-xl">
+        <div className="text-[30px] font-bold text-white ">Welcome <span className="">👋</span></div>
 
-        <div className="form-subtitle">Set a username to get started</div>
+        <div className=" font-semibold text-white  ">Set a username to get started</div>
 
-        <div className="auth">
-          <div className="auth-label">Username</div>
-          <input className="auth-input" name="username" />
-          <button className="auth-button" type="submit">
+        <div className=" m-2 ">
+          <div className=" my-2 text-white font-semibold ">Username</div>
+          <input className=" m-2 rounded w-full " name="username" /><br />
+
+          <button className="border-2 hover:bg-black bg-[#ae09dc9f] hover:border-white text-white rounded-xl font-bold px-2 my-2" type="submit">
             Enter
           </button>
         </div>
