@@ -29,15 +29,6 @@ function App() {
         <Route path="*" element={<Home />}/>
 
        
-        
-
-
-
-        
-
-
-        
-
         <Route path="/dashboard" element={isusersign?<Dashboard/>:<Login/>}/>
         <Route path="/chat" element={isusersign?<Chatgrp/>:<Login/>}/>
         <Route path="/chatbot" element={isusersign?<Bot/>:<Login/>}/>
@@ -45,13 +36,10 @@ function App() {
         
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
-<<<<<<< HEAD
         <Route path="/cheatsheet" element={<Cheatsheet/>}/>
-=======
 
 
 
->>>>>>> 9f61f97df550b6b938d46e524e3f0731fd116893
       </Routes>
     </div>
   )
