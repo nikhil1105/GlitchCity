@@ -1,4 +1,6 @@
 import axios from "axios";
+import { EarthCanvas, StarsCanvas } from './canvas';
+
 const AuthPage = (props) => {
 
   const onSubmit = (e) => {
@@ -26,6 +28,7 @@ const AuthPage = (props) => {
           </button>
         </div>
       </form>
+      <StarsCanvas/>
     </div>
   );
 };
