@@ -36,10 +36,7 @@ function App() {
         <Route path="/dashboard" element={isusersign?<Dashboard/>:<Login/>}/>
         <Route path="/chat" element={isusersign?<Chatgrp/>:<Login/>}/>
         <Route path="/chatbot" element={isusersign?<Bot/>:<Login/>}/>
-
-        
         <Route path="/about" element={isusersign?<About/>:<Login/>}/>
-
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/cheatsheet" element={<Cheatsheet/>}/>
