@@ -11,7 +11,7 @@ import Bot from './components/ChatsBot';
 
 import Login from './components/login';
 import Signup from './components/Signup';
-
+import About from './components/About';
 
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
         <Route path="/chat" element={isusersign?<Chatgrp/>:<Login/>}/>
         <Route path="/chatbot" element={isusersign?<Bot/>:<Login/>}/>
         
-        
+        <Route path="/about" element={isusersign?<About/>:<Login/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
 
