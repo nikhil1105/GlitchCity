@@ -8,9 +8,9 @@ const About = () => {
 
   return (
     <div>
-      <div class="flex min-h-screen items-center justify-center bg-neutral-800 main">
-        <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-          <div class={`${toggle ? 'hidden' : ""} group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30`}>
+      <div class="flex w-full min-h-screen items-center justify-center bg-neutral-800 main">
+        <div class="grid gap-5 ">
+          <div class={`${toggle ?'hidden': ""} group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30`}>
             <div class="h-96 w-72">
               <img class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src="../assets/ng.png" alt="" />
             </div>
@@ -38,13 +38,13 @@ const About = () => {
           </div>
 
         </div>
-        <div className='border-2 mx-4 bg-[#460658] hover:border-white text-white rounded-xl font-bold px-4 py-2 my-4' >
+        <div className={`${toggle ?'hidden': ""} border-2 mx-4 bg-[#460658] text-white rounded-xl font-bold px-4 py-2 my-4 `}>
           <h1 className='font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2'>Hi, I'm <span className='text-[#915eff]' >Nikhil</span></h1>
           <p className='text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]'>I am a fullstack Developer<br />I  develop 3D web applications.</p>
           <div className='font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2' >
             Skills
           </div>
-          <div className='text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]'>
+          <div className=' capitalize text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]'>
             <div>reactjs</div>
             <div>nodejs</div>
             <div>tailwind</div>
@@ -52,11 +52,27 @@ const About = () => {
             <div>react-three-fiber/threejs</div>
           </div>
         </div>
+        <div className={`${!toggle ?'hidden': ""} border-2 mx-4 bg-[#460658] text-white rounded-xl font-bold px-4 py-2 my-4 `}>
+          <h1 className='font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2'>Hi, I'm <span className='text-[#915eff]' >Nikhil</span></h1>
+          <p className='text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]'>I am a fullstack Developer</p>
+          <div className='font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2' >
+            Skills
+          </div>
+          <div className=' capitalize text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]'>
+            <div>reactjs</div>
+            <div>PHP</div>
+            <div>tailwind</div>
+            <div>mongodb</div>
+          </div>
+        </div>
 
-
+        
+        <button onClick={()=>settoggle(!toggle)} className=' fixed bottom-10 bg-[#460658] text-white hover:bg-white hover:text-black font-bold border-2 px-4 py-2 rounded-xl' >
+          Switch
+        </button>
         <StarsCanvas />
       </div>
-
+      
     </div>
 
   )
