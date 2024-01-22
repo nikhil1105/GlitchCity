@@ -1,0 +1,8 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.bg{
+    background-image: linear-gradient(135deg, #0d61ec 10%, #de0f82 100%);
+}

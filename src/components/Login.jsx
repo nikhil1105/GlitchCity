@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
-import { EarthCanvas, StarsCanvas } from './canvas';
+import { StarsCanvas } from './canvas';
 
 function Login() {
 
@@ -15,13 +15,11 @@ function Login() {
 
   useEffect(() => {
     fetchUsers();
-    console.log(currentPath);
-
+      
   }, [])
 
   const fetchUsers = () => {
     axios.get('http://localhost:3001/register').then((res) => {
-      console.log(res);
     }).catch((e) => {
       console.log('error', e);
     })
