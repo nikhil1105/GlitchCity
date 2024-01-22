@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Link } from "react-router-dom";
 import '../Home.css'
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
@@ -120,6 +120,8 @@ const projects = [
     },
 
 ];
+
+
 
 
 const ProjectCard = ({ index, name, description, tags, image, source_code_link, project_link }) => {
@@ -280,6 +282,10 @@ const ServiceCard = ({ index, title, icon }) => {
 
 
 function Home() {
+
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    })
 
   
     return (

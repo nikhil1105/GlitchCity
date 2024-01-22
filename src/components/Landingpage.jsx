@@ -104,10 +104,9 @@ export default function Landingpage() {
             </div>
             <div className="  top-96 fixed">
                 
-            <Link to='/dashboard'  >
+            <Link to='/home'  >
             <div className={` ${ypos<2.2?'hidden':''}  z-[1] cursor-pointer bg-[#4e42f5]  w-[100px] h-[100px] rounded-full  flex items-center justify-center `} >
                 <img  src="../assets/play-button1.png" className=" imgGlitch h-[90px] w-[90px]" />
-                
             </div>
             
             </Link>

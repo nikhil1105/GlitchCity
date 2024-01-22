@@ -28,7 +28,7 @@ const Nav = () => {
           
           <li>
             <Link
-              to='/'
+              to='/home'
               className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
             >
               Home
@@ -88,7 +88,7 @@ const Nav = () => {
       <ul className={` md:hidden ${imdobileMenuOpen? '':'hidden'}  absolute top-[60px] right-[30px] bg-slate-700 bg-opacity-[0.9] p-4 rounded-2xl`}>
       <li>
             <Link
-              to='/'
+              to='/home'
               className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
             >
               Home

@@ -31,15 +31,15 @@ function App() {
     <div>
       <Nav/>
       <Routes>
-        <Route path="*" element={<Landingpage />}/>
+        <Route path="*" element={<Landingpage/>}/>
         <Route path="/home" element={<Home/>}/>
         <Route path="/dashboard" element={isusersign?<Dashboard/>:<Login/>}/>
         <Route path="/chat" element={isusersign?<Chatgrp/>:<Login/>}/>
-        <Route path="/chatbot" element={isusersign?<Bot/>:<Login/>}/>
-        <Route path="/about" element={isusersign?<About/>:<Login/>}/>
+        <Route path="/chatbot" element={<Bot/>}/>
+        <Route path="/about" element={<About/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
-        <Route path="/cheatsheet" element={<Cheatsheet/>}/>
+        <Route path="/cheatsheet" element={isusersign?<Cheatsheet/>:<Login/>}/>
       </Routes>
     </div>
   )
