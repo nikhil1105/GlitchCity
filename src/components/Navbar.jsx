@@ -66,7 +66,7 @@ const Nav = () => {
         </div>
       </nav>
       <div>
-      <ul className={`sm:hidden ${isMobileMenuOpen? '':'hidden'}  absolute top-[60px] right-[30px] bg-slate-500 bg-opacity-[0.5] p-4 rounded-2xl`}>
+      <ul className={`sm:hidden ${isMobileMenuOpen? '':'hidden'}  absolute top-[60px] right-[30px] bg-slate-700 bg-opacity-[0.9] p-4 rounded-2xl`}>
           <li>
             <Link
               href="/"
