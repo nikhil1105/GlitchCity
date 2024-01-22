@@ -28,92 +28,116 @@ const Bot = () => {
             },
             {
               id: '4',
-              message: 'Hi {previousValue}, Please Select Your Favourite Language',
+              message: 'Hi {previousValue}',
               trigger: '5',
             },
             {
-              id: '5',
+              id:'5',
+              message:'How Can i help You',
+              trigger:'6'
+
+            },
+            {
+              id:'6',
+              user:true,
+              trigger:'7'
+
+            },
+            {
+              id:'7',
+              message:'Okay i got it your issue {previousValue}',
+              trigger:'8'
+            },
+            {
+              id:'8',
+              message:'Here our the certain solution',
+              trigger:'9'
+
+            },
+            
+            {
+              id: '9',
               options: [
-                { value: 1, label: 'Java', trigger: '6' },
-                { value: 2, label: 'JavaScript', trigger: '7' },
-                { value: 3, label: 'Python', trigger: '8' },
-                { value: 4, label: 'Php', trigger: '9' },
+                { value: 1, label: 'Java', trigger: '10' },
+                { value: 2, label: 'JavaScript', trigger: '11' },
+                { value: 3, label: 'Python', trigger: '12' },
+                { value: 4, label: 'Php', trigger: '13' },
               ],
             },
             {
-              id: '6',
+              id: '10',
               component: (
                 <div>
                   <p>
-                    You selected Java! Check out the Java tutorial on Code with Harry:
+                    You selected Java! 
                   </p>
                   <a
                     href="https://www.codewithharry.com/videos/java-tutorial-in-hindi-1"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Code with Harry Java Tutorial
+                    Click here to Get The Solution
                   </a>
                 </div>
               ),
               end: true, // This step ends the conversation
             },
             {
-              id: '7',
+              id: '11',
               component: (
                 <div>
                   <p>
-                    You selected Javascript! Check out the Best Javascript tutorial :
+                    You selected Javascript! 
                   </p>
                   <a
                     href="https://javascript.info/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Javascript Tutorial
+                     Click here to Get The Solution
                   </a>
                 </div>
               ),
               end: true, // This step ends the conversation
             },
             {
-              id: '8',
+              id: '12',
               component: (
                 <div>
                   <p>
-                    You selected Python! Check out the Python tutorial on Code with Harry:
+                    you selected Python!
                   </p>
                   <a
                     href="https://www.codewithharry.com/tutorial/python/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Code with Harry Python Tutorial
+                    Click here to Get The Solution
                   </a>
                 </div>
               ),
               end: true, // This step ends the conversation
             },
             {
-              id: '9',
+              id: '13',
               component: (
                 <div>
                   <p>
-                    You selected PHP! Check out the PHP tutorial on Code with Harry:
+                    You selected PHP! 
                   </p>
                   <a
                     href="https://www.codewithharry.com/tutorial/php/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Code with Harry PHP Tutorial
+                     Click here to Get The Solution
                   </a>
                 </div>
               ),
-              trigger: '10', // This step ends the conversation
+              trigger: '14', // This step ends the conversation
             },
             {
-              id: '10',
+              id: '14',
               message: 'Thankyou!',
               end: true
             },
