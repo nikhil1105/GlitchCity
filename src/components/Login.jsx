@@ -15,13 +15,11 @@ function Login() {
 
   useEffect(() => {
     fetchUsers();
-    console.log(currentPath);
-
+      
   }, [])
 
   const fetchUsers = () => {
     axios.get('http://localhost:3001/register').then((res) => {
-      console.log(res);
     }).catch((e) => {
       console.log('error', e);
     })

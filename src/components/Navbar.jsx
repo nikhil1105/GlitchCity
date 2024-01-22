@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link,useNavigate } from "react-router-dom";
+import Bot from './ChatsBot';
 
 
 const Nav = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [help,sethelp] = useState(false)
   const navigate = useNavigate()
   const isusersign = !!localStorage.getItem('token')
 
@@ -48,12 +50,12 @@ const Nav = () => {
             }
           </li>
           <li>
-            <Link
-              href="/"
+            <button
+              onClick={()=>sethelp(!help)}
               className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
             >
-              Contact
-            </Link>
+              Help
+            </button>
           </li>
         </ul>
         <div className='sm:hidden'>
@@ -92,15 +94,16 @@ const Nav = () => {
             }
           </li>
           <li>
-            <Link
-              href="/"
+            <button
+              onClick={()=>sethelp(!help)}
               className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
             >
-              Contact
-            </Link>
+              Help
+            </button>
           </li>
         </ul>
       </div>
+      <div className={`${help?'':'hidden'}`} ><Bot/></div>
     </header>
   );
 };
