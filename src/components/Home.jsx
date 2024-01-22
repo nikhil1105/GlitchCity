@@ -9,15 +9,15 @@ import { Tilt } from "react-tilt";
 const services = [
 
     {
-        title: "reactjs",
+        title: "ReactJs",
         icon: '../assets/tech/reactjs.png',
     },
     {
-        title: "nodejs",
+        title: "NodeJs",
         icon: '../assets/tech/nodejs.png',
     },
     {
-        title: "tailwind",
+        title: "Tailwind",
         icon: '../assets/tech/tailwind.png',
     },
 
@@ -30,8 +30,8 @@ const services = [
         icon: '../assets/tech/git.png',
     },
     {
-        title: "Framermotion",
-        icon: '../assets/tech/framermotion.png',
+        title: "ThreeJs",
+        icon: '../assets/tech/threejs.svg',
     },
 ];
 
@@ -284,7 +284,7 @@ function Home() {
   
     return (
         <>
-            <div className='h-full w-[100vw] text-white bg'>
+            <div className='h-full w-full text-white bg'>
                 <header className='flex justify-center pt-20 '  >
                     <div className='border-4  border-[#ae09dc5f] bg-[#4c20b1] bg-opacity-[0.3]  rounded-xl w-fit p-10 flex flex-col lg:flex-row '>
                         <div>

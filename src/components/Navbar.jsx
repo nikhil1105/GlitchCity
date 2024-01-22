@@ -77,7 +77,7 @@ const Nav = () => {
         </ul>
         <div className='md:hidden'>
           <img
-            src="./assets/hamburger.svg"
+            src={`./assets/${!imdobileMenuOpen?'hamburger.svg':'close.svg'}`}
             alt="Hamburger"
             className='w-[28px] h-[28px] object-contain cursor-pointer'
             onClick={toggleMobileMenu}
