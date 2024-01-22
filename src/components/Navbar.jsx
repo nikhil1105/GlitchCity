@@ -74,6 +74,14 @@ const Nav = () => {
               Help
             </button>
           </li>
+          <li>
+            <Link
+              to='/about'
+              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
+            >
+              About us
+            </Link>
+          </li>
         </ul>
         <div className='md:hidden'>
           <img
@@ -110,6 +118,7 @@ const Nav = () => {
               TODO
             </Link>
           </li>
+          
           <li>
           {isusersign?
             <button
@@ -133,6 +142,14 @@ const Nav = () => {
             >
               Help
             </button>
+          </li>
+          <li>
+            <Link
+              to='/about'
+              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
+            >
+              About us
+            </Link>
           </li>
         </ul>
       </div>
