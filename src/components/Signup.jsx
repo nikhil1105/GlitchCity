@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import { StarsCanvas } from './canvas';
 
 function Signup() {
@@ -16,7 +16,6 @@ function Signup() {
 
   const fetchUsers = () => {
     axios.get('http://localhost:3001/register').then((res)=>{
-      console.log(res);
     }).catch((e)=>{
       console.log('error',e);
     })
@@ -53,6 +52,8 @@ function Signup() {
           <button className="border-2 hover:bg-black bg-[#ae09dc9f] hover:border-white text-white rounded-xl font-bold px-4 py-2 my-4" type="submit">
             Sign-in
           </button>
+          <br/>
+          <Link to='/login' className=" capitalize my-2 text-white font-semibold ">Already Have Account Login Here </Link>
         </div>
       </form>
       <StarsCanvas/>

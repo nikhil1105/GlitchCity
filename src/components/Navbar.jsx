@@ -4,7 +4,7 @@ import Bot from './ChatsBot';
 
 
 const Nav = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [imdobileMenuOpen, setImdobileMenuOpen] = useState(false);
   const [help,sethelp] = useState(false)
   const navigate = useNavigate()
   const isusersign = !!localStorage.getItem('token')
@@ -15,22 +15,39 @@ const Nav = () => {
   }
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setImdobileMenuOpen(!imdobileMenuOpen);
   };
 
   return (
     <header className=' py-4 px-4 bg-[#9d46d700] bg-opacity-[0.5] absolute z-10 w-full'>
       <nav className=' flex justify-between items-center '>
         <Link to="/" className=' font-bold  text-white'>
-          Logo
+          The GlitchCity
         </Link>
-        <ul className={` sm:flex justify-center items-center gap-16 hidden `}>
+        <ul className={` md:flex justify-center items-center gap-16 hidden `}>
+          
           <li>
             <Link
-              to='/'
+              to='/home'
               className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
             >
               Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to='/cheatsheet'
+              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
+            >
+              Cheatsheet
+            </Link>
+          </li>
+          <li>
+            <Link
+              to='/dashboard'
+              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
+            >
+              TODO
             </Link>
           </li>
           <li>
@@ -58,9 +75,9 @@ const Nav = () => {
             </button>
           </li>
         </ul>
-        <div className='sm:hidden'>
+        <div className='md:hidden'>
           <img
-            src="./assets/hamburger.svg"
+            src={`./assets/${!imdobileMenuOpen?'hamburger.svg':'close.svg'}`}
             alt="Hamburger"
             className='w-[28px] h-[28px] object-contain cursor-pointer'
             onClick={toggleMobileMenu}
@@ -68,13 +85,29 @@ const Nav = () => {
         </div>
       </nav>
       <div>
-      <ul className={`sm:hidden ${isMobileMenuOpen? '':'hidden'}  absolute top-[60px] right-[30px] bg-slate-700 bg-opacity-[0.9] p-4 rounded-2xl`}>
-          <li>
+      <ul className={` md:hidden ${imdobileMenuOpen? '':'hidden'}  absolute top-[60px] right-[30px] bg-slate-700 bg-opacity-[0.9] p-4 rounded-2xl`}>
+      <li>
             <Link
-              href="/"
+              to='/home'
               className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
             >
               Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to='/cheatsheet'
+              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
+            >
+              Cheatsheet
+            </Link>
+          </li>
+          <li>
+            <Link
+              to='/dashboard'
+              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
+            >
+              TODO
             </Link>
           </li>
           <li>

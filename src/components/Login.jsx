@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from "axios";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate,Link } from "react-router-dom";
 import { StarsCanvas } from './canvas';
 
 function Login() {
@@ -57,8 +57,11 @@ function Login() {
 
           <button className="border-2 hover:bg-black bg-[#ae09dc9f] hover:border-white text-white rounded-xl font-bold px-4 py-2 my-4" type="submit">
             Login
-          </button>
+          </button><br/>
+          <Link to='/signup' className=" my-2 text-white font-semibold capitalize ">Not Have Account Sign-up Here </Link>
+
         </div>
+        
       </form>
 
        

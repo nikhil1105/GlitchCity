@@ -1,22 +1,23 @@
-import React, { useRef } from 'react'
-import StarsCanvas from './canvas/Stars'
+import React, { useEffect, useRef } from 'react'
+import { Link } from "react-router-dom";
 import '../Home.css'
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Tilt } from "react-tilt";
 
 
+
 const services = [
 
     {
-        title: "reactjs",
+        title: "ReactJs",
         icon: '../assets/tech/reactjs.png',
     },
     {
-        title: "nodejs",
+        title: "NodeJs",
         icon: '../assets/tech/nodejs.png',
     },
     {
-        title: "tailwind",
+        title: "Tailwind",
         icon: '../assets/tech/tailwind.png',
     },
 
@@ -29,10 +30,175 @@ const services = [
         icon: '../assets/tech/git.png',
     },
     {
-        title: "Framermotion",
-        icon: '../assets/tech/framermotion.png',
+        title: "ThreeJs",
+        icon: '../assets/tech/threejs.svg',
     },
 ];
+
+
+const projects = [
+    {
+        name: "Landing page",
+        description:
+            "Captivating Parallax 3D effect on this stunning landing page crafted using CSS and React",
+        tags: [
+            {
+                name: "react",
+                color: "font-bold text-blue-500",
+            },
+
+            {
+                name: "css",
+                color: "font-bold text-red-500",
+            },
+        ],
+        image: '../web/landing.png',
+        project_link: '/'
+    },
+    {
+        name: "Chat Page",
+        description:
+            "A sleek and responsive chat page crafted with React, styled with Tailwind CSS, and powered by the ChatEngine API for seamless real-time communication.",
+        tags: [
+            {
+                name: "react",
+                color: "font-bold text-green-500",
+            },
+            {
+                name: "tailwind",
+                color: "font-bold text-white-500",
+            },
+            {
+                name: "nodejs",
+                color: "font-bold text-red-500",
+            },
+        ],
+        image: '../web/chat.png',
+        project_link: '/chat'
+    },
+    {
+        name: "Cheatsheet Page",
+        description:
+            "Collaborative shortnotes cheatsheet page effortlessly with Node.js, React, and Tailwind CSS for seamless sharing and quick reference.",
+        tags: [
+            {
+                name: "react",
+                color: "font-bold text-yellow-500",
+            },
+            {
+                name: "tailwind",
+                color: "font-bold text-red-500",
+            },
+            {
+                name: "node",
+                color: "font-bold text-pink-500",
+            },
+        ],
+        image: '../web/cheatsheet.png',
+        project_link: '/cheatsheet'
+    },
+    {
+        name: "ToDo Page",
+        description:
+            'A React todo page with Tailwind CSS styling, state management, and hosted on localhost for efficient task organization.',
+        tags: [
+            {
+                name: "react",
+                color: "font-bold text-green-500",
+            },
+            {
+                name: "tailwind",
+                color: "font-bold text-gray-500",
+            },
+            {
+                name: "node",
+                color: "font-bold text-blue-500",
+            },
+        ],
+        image: '../web/dash.png',
+        project_link: '/dashboard'
+    },
+
+];
+
+
+
+
+const ProjectCard = ({ index, name, description, tags, image, source_code_link, project_link }) => {
+
+    return (
+
+        <div
+        >
+            <Tilt
+                options={{
+                    max: 45,
+                    scale: 1,
+                    speed: 450
+                }}
+                className=" bg-[#151030] p-5 rounded-2xl sm:w-[360px] w-full"
+            >
+                <div
+                    className='relative w-full h-[230px]'
+                >
+                    <img
+                        src={image}
+                        alt={name}
+                        className='w-full h-full object-cover rounded-2xl'
+                    />
+                    <div
+                        className=' absolute inset-0 flex justify-end m-3 '
+                    >
+
+                    </div>
+                </div>
+
+                <div
+                    className='mt-5'
+                >
+                    <h3
+                        className='text-white font-bold text-[24px]'
+                    >{name}</h3>
+                    <p
+                        className=' text-secondary text-[14px]'
+                    >{description}</p>
+                </div>
+                <div
+                    className='mt-4 flex flex-wrap gap-2'
+                >
+                    {
+                        tags.map((tag) => (
+                            <p key={tag.name} className={`text-[14px] ${tag.color}`}>
+                                #{tag.name}
+                            </p>
+                        ))
+                    }
+                    <Link
+                        to={project_link}
+                        style={{
+
+                            WebkitTapHighlightColor: 'transparent',
+                            WebkitTouchCallout: 'none',
+                            WebkitUserSelect: 'none',
+                            KhtmlUserSelect: 'none',
+                            MozUserSelect: 'none',
+                            msUserSelect: 'none',
+                            userSelect: 'none',
+                            outline: 'none !important'
+
+                        }}
+                        className={`${name === "home page" ? 'hidden' : 'block'} text-black bg-[#915eff] p-1 rounded-full cursor-pointer px-2 border-white font-bold hover:text-white
+             hover:border-[3px]  `}
+
+                    >Visit</Link>
+                </div>
+            </Tilt>
+        </div>
+
+    )
+}
+
+
 
 const ServiceCard = ({ index, title, icon }) => {
 
@@ -116,19 +282,15 @@ const ServiceCard = ({ index, title, icon }) => {
 
 
 function Home() {
-    
-const videoRef = useRef(null);
 
-const handleVideoEnd = () => {
-    // Rewind the video to the beginning when it ends
-    if (videoRef.current) {
-        videoRef.current.currentTime = 0;
-        videoRef.current.play();
-    }
-};
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    })
+
+  
     return (
         <>
-            <div className='h-full w-[100vw] text-white bg'>
+            <div className='h-full w-full text-white bg'>
                 <header className='flex justify-center pt-20 '  >
                     <div className='border-4  border-[#ae09dc5f] bg-[#4c20b1] bg-opacity-[0.3]  rounded-xl w-fit p-10 flex flex-col lg:flex-row '>
                         <div>
@@ -148,7 +310,7 @@ const handleVideoEnd = () => {
                         </div>
                     </div>
                 </header>
-                <section className='mx-8 flex justify-center items-center flex-col  ' >
+                <section className='mx-20 ' >
                     <p className="text-white font-black md:text-[60px] sm:text-[50px] text-[30px]"
                     >Introduction</p>
                     <h2 className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">Overview.</h2><br />
@@ -184,30 +346,60 @@ const handleVideoEnd = () => {
                         ))}
                     </div>
 
-                    <div className='w-full h-fit border-2 flex justify-center bg-black rounded-xl my-10  border-gray-800 '>
-                        <video
-                            ref={videoRef}
-                            width="360px"
-                            height="240px"
-                            onEnded={handleVideoEnd}
-                            autoPlay
-                            loop
-                            muted
-                            className='z-10'
+                    <div>
+                        <div>
+                            <p className="text-white font-black md:text-[60px] sm:text-[50px] text-[30px]"
+                            >My Work</p>
+                            <h2 className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">Projects.</h2>
+                        </div>
+                        <div className='mt-4 capitalize text-[17px] max-w-3xl leading-[30px]' >
+
+                            Welcome to our cutting-edge website! Immerse yourself in the captivating parallax 3D landing page, chat seamlessly using React, CSS, and Tailwind with ChatEngine API, explore a collaborative cheatsheet with Node.js, React, and Tailwind, and boost productivity with our React, Tailwind-powered todo page—all hosted locally. Elevate your online experience with innovation and efficiency at your fingertips.                        </div>
+                        <div
+                            className='mt-20 flex flex-wrap gap-10 '
                         >
-                            <source src='../assets/render.mp4' type='video/mp4'  />
-                        </video>
-                        <img src="../assets/sec/1.png" className='z-20 left-4 absolute h-[200px] w-fit' />    
-                        <img src="../assets/sec/2.png" className='z-20 right-4 absolute h-[200px] w-fit' />    
-                        <img src="../assets/sec/3.png" className='z-20 absolute h-[200px] w-fit' />    
-
-
+                            {projects.map((project, index) => (
+                                <ProjectCard key={`project-${index}`} index={index} {...project} />
+                            ))}
+                        </div>
                     </div>
 
 
-                </section>
-                <footer>
 
+                </section>
+                <footer className="bg-gray-800 text-white my-8 py-8">
+                    <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
+                        <div className="mb-4 md:mb-0">
+                            <p className="text-sm">&copy; 2024 The GlitchCity . All rights reserved.</p>
+                        </div>
+                        <div>
+                            <ul className="flex space-x-4">
+                                <li>
+                                    <a href="/" className="text-sm hover:text-gray-300">Home</a>
+                                </li>
+                                <li>
+                                    <a href="/about" className="text-sm hover:text-gray-300">About</a>
+                                </li>
+                                <li>
+                                    <a href="/contact" className="text-sm hover:text-gray-300">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className='p-4' >
+                            <p className="text-sm">Follow Us: </p>
+                            <div className="flex space-x-2">
+                                <a href="#" className="text-blue-500 hover:text-blue-300">
+                                    Linkdin
+                                </a>
+                                <a href="#" className="text-blue-500 hover:text-blue-300">
+                                    Facebook
+                                </a>
+                                <a href="#" className="text-blue-500 hover:text-blue-300">
+                                    Instagram
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </footer>
 
             </div>

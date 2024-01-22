@@ -33,4 +33,4 @@ const AuthPage = (props) => {
   );
 };
 
-export default AuthPage;
+export default AuthPage ;
