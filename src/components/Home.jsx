@@ -292,7 +292,7 @@ function Home() {
         <>
             <div className='h-full w-full text-white bg'>
                 <header className='flex justify-center pt-20 '  >
-                    <div className='border-4  border-[#ae09dc5f] bg-[#4c20b1] bg-opacity-[0.3]  rounded-xl w-fit p-10 flex flex-col lg:flex-row '>
+                    <div className='border-4  border-[#ae09dc5f]   rounded-xl w-fit p-10 flex flex-col lg:flex-row '>
                         <div>
                             <span className='text-[80px] font-bold capitalize' >
                                 the <br />
