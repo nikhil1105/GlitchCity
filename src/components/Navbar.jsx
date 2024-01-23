@@ -131,7 +131,7 @@ const Nav = () => {
           </li>
           <li>
             <Link
-              to='/dashboard'
+              to='/chat'
               className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
             >
               ChatGroup

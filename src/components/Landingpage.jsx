@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import  "../App.css";
 import { Link } from "react-router-dom";
 import StarsCanvas from "./canvas/Stars";
+import Nav from "./Navbar";
 
 export default function Landingpage() {
 
@@ -35,7 +36,7 @@ export default function Landingpage() {
 
     return (
         <div className=" h-[200vh] flex justify-center items-top text-center w-full "
-        >
+        ><Nav/>
 
         <div className=" fixed h-[100vh] w-full object-cover flex flex-col items-center justify-center " >
 

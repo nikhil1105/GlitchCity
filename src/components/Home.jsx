@@ -292,17 +292,17 @@ function Home() {
   
     return (
         <>
-            <div className='h-full w-full text-white bg'><Nav/>
-                <header className='flex w-[90vw] justify-center pt-20 '  >
-                    <div className='border-4  border-[#ae09dc5f] bg-[#4c20b1] bg-opacity-[0.3]  rounded-xl w-fit p-10 flex flex-col lg:flex-row '>
-                        <div>
-                            <span className='text-[80px] font-bold capitalize' >
+        <div className='h-full w-full text-white bg'><Nav/>
+            <header className='flex w-fit justify-center pt-20 m-auto '  >
+                <div className='border-4 border-[#ae09dc5f] bg-[#4c20b1] bg-opacity-[0.3]  rounded-xl w-fit p-10 flex flex-col lg:flex-row '>
+                    <div>
+                            <span className='sm:text-[80px] text-[60px] font-bold capitalize' >
                                 the <br />
                             </span>
-                            <span className='text-[80px] text-yellow-300 font-bold capitalize'>
+                            <span className='sm:text-[80px] text-[60px] text-yellow-300 font-bold capitalize'>
                                 glitch
                             </span>
-                            <span className='text-[80px] font-bold text-yellow-300 capitalize'>
+                            <span className='sm:text-[80px] text-[60px] font-bold text-yellow-300 capitalize'>
                                 city
                             </span>
 
