@@ -1,9 +1,8 @@
- HEAD
-import React from 'react';
+
 import StarsCanvas from './canvas/Stars';
 
 import React, { useState } from 'react'
-import StarsCanvas from './canvas/Stars'
+
 
 
 

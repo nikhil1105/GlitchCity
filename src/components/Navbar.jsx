@@ -29,7 +29,7 @@ const Nav = () => {
           <li>
             <Link
               to='/home'
-              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
+              className=' leading-normal text-lg text-white font-bold hover:text-[#0c0c0c]'
             >
               Home
             </Link>
@@ -37,7 +37,7 @@ const Nav = () => {
           <li>
             <Link
               to='/cheatsheet'
-              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
+              className=' leading-normal text-lg text-white font-bold hover:text-[#111111]'
             >
               Cheatsheet
             </Link>
@@ -45,7 +45,7 @@ const Nav = () => {
           <li>
             <Link
               to='/dashboard'
-              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
+              className=' leading-normal text-lg text-white font-bold hover:text-[#19191a]'
             >
               TODO
             </Link>
@@ -54,13 +54,13 @@ const Nav = () => {
             {isusersign?
             <button
               onClick={handlesignout}
-              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]' 
+              className=' leading-normal text-lg text-white font-bold hover:text-[#151516]' 
             >
               logout
             </button>:
             <Link
             to="/login"
-            className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]' 
+            className=' leading-normal text-lg text-white font-bold hover:text-[#171718]' 
           >
             login
           </Link>
@@ -69,7 +69,7 @@ const Nav = () => {
           <li>
             <button
               onClick={()=>sethelp(!help)}
-              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
+              className=' leading-normal text-lg text-white font-bold hover:text-[#1c1c1d]'
             >
               Help
             </button>
@@ -77,7 +77,7 @@ const Nav = () => {
           <li>
             <Link
               to='/about'
-              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
+              className=' leading-normal text-lg text-white font-bold hover:text-[#1a1a1a]'
             >
               About us
             </Link>
