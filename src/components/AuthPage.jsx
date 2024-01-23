@@ -1,5 +1,6 @@
 import axios from "axios";
 import {  StarsCanvas } from './canvas';
+import Nav from "./Navbar";
 
 const AuthPage = (props) => {
 
@@ -14,6 +15,7 @@ const AuthPage = (props) => {
 
   return (
     <div className=" main flex items-center justify-center bg-[#222020] w-[100vw] h-[100vh] "  >
+      <Nav/>
       <form onSubmit={onSubmit} className="border-4  border-[#ae09dc9f] p-20 bg-[#4c20b1] max-w-[90vw] bg-opacity-[0.7] rounded-xl">
         <div className="text-[30px] font-bold text-white ">Welcome <span className="">👋</span></div>
 

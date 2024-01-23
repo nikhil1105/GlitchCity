@@ -16,10 +16,13 @@ const Nav = () => {
 
   const toggleMobileMenu = () => {
     setImdobileMenuOpen(!imdobileMenuOpen);
+    if (help==true) {
+      sethelp(!help)
+    }
   };
 
   return (
-    <header className=' py-4 px-4 bg-[#9d46d700] bg-opacity-[0.5] absolute z-10 w-full'>
+    <header className=' fixed  py-4 px-4 bg-opacity-[0.5] top-0  z-50 w-full'>
       <nav className=' flex justify-between items-center '>
         <Link to="/" className=' font-bold  text-white'>
           The GlitchCity
@@ -48,6 +51,14 @@ const Nav = () => {
               className=' leading-normal text-lg text-white font-bold hover:text-[#19191a]'
             >
               TODO
+            </Link>
+          </li>
+          <li>
+            <Link
+              to='/chat'
+              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
+            >
+              ChatGroup
             </Link>
           </li>
           <li>
@@ -116,6 +127,14 @@ const Nav = () => {
               className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
             >
               TODO
+            </Link>
+          </li>
+          <li>
+            <Link
+              to='/dashboard'
+              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
+            >
+              ChatGroup
             </Link>
           </li>
           
