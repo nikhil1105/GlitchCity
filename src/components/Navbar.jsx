@@ -22,7 +22,7 @@ const Nav = () => {
   };
 
   return (
-    <header className=' fixed  py-4 px-4 bg-opacity-[0.5] top-0  z-50 w-full'>
+    <header className=' absolute  py-4 px-4 bg-opacity-[0.5] top-0  z-50 w-full'>
       <nav className=' flex justify-between items-center '>
         <Link to="/" className=' font-bold  text-white'>
           The GlitchCity
@@ -32,7 +32,7 @@ const Nav = () => {
           <li>
             <Link
               to='/home'
-              className=' leading-normal text-lg text-white font-bold hover:text-[#0c0c0c]'
+              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
             >
               Home
             </Link>
@@ -40,7 +40,7 @@ const Nav = () => {
           <li>
             <Link
               to='/cheatsheet'
-              className=' leading-normal text-lg text-white font-bold hover:text-[#111111]'
+              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
             >
               Cheatsheet
             </Link>
@@ -48,7 +48,7 @@ const Nav = () => {
           <li>
             <Link
               to='/dashboard'
-              className=' leading-normal text-lg text-white font-bold hover:text-[#19191a]'
+              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
             >
               TODO
             </Link>
@@ -65,13 +65,13 @@ const Nav = () => {
             {isusersign?
             <button
               onClick={handlesignout}
-              className=' leading-normal text-lg text-white font-bold hover:text-[#151516]' 
+              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]' 
             >
               logout
             </button>:
             <Link
             to="/login"
-            className=' leading-normal text-lg text-white font-bold hover:text-[#171718]' 
+            className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]' 
           >
             login
           </Link>
@@ -80,7 +80,7 @@ const Nav = () => {
           <li>
             <button
               onClick={()=>sethelp(!help)}
-              className=' leading-normal text-lg text-white font-bold hover:text-[#1c1c1d]'
+              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
             >
               Help
             </button>
@@ -88,7 +88,7 @@ const Nav = () => {
           <li>
             <Link
               to='/about'
-              className=' leading-normal text-lg text-white font-bold hover:text-[#1a1a1a]'
+              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
             >
               About us
             </Link>
@@ -131,7 +131,7 @@ const Nav = () => {
           </li>
           <li>
             <Link
-              to='/dashboard'
+              to='/chat'
               className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
             >
               ChatGroup
