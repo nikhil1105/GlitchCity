@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import StarsCanvas from './canvas/Stars'
+import Nav from './Navbar'
 
 
 
@@ -8,6 +9,7 @@ const About = () => {
 
   return (
     <div>
+      <Nav/>
       <div class="flex w-full min-h-screen items-center justify-center bg-neutral-800 main">
         <div class="grid gap-5 ">
           <div class={`${toggle ?'hidden': ""} group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30`}>
@@ -62,7 +64,7 @@ const About = () => {
             <div>reactjs</div>
             <div>PHP</div>
             <div>tailwind</div>
-            <div>mongodb</div>
+            <div>SQL</div>
           </div>
         </div>
 

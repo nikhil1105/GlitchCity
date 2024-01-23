@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { StarsCanvas } from './canvas'
 import axios from "axios";
+import Nav from './Navbar';
 
 function Cheatsheet() {
 
@@ -44,10 +45,11 @@ function Cheatsheet() {
     return (
         <>
             <div className=' flex items-center justify-between fixed main w-[100vw] h-[100vh]' >
+                <div className='z-10' ><Nav/></div>
                <StarsCanvas/> </div>
             <div className=' w-full flex flex-col items-center justify-center h-auto' >
 
-                <div className={`${upl ? '' : 'hidden'}  fixed flex flex-wrap w-fit h-fit p-4  bg-[#461ca7] border-4 rounded-xl border-[#ae09dc9f] bg-opacity-[0.95] z-10 top-[50%] left-[50%]`} style={{ transform: 'translate(-50%,-50%)' }} >
+                <div className={`${upl ? '' : 'hidden'}  fixed flex flex-col w-fit h-fit p-4  bg-[#461ca7] border-4 rounded-xl border-[#ae09dc9f] bg-opacity-[0.95] z-10 top-[50%] left-[50%]`} style={{ transform: 'translate(-50%,-50%)' }} >
 
 
 
@@ -71,7 +73,7 @@ function Cheatsheet() {
                     </div>
 
                     <div>
-                        <label htmlFor='file_picker' className=' p-2 ml-4  text-white font-bold cursor-pointer bg-[#461ca7] rounded-xl hover:bg-white hover:text-black ' >upload file</label>
+                        <label htmlFor='file_picker' className=' p-4 border-4   text-white font-bold cursor-pointer absolute bg-[#461ca7] rounded-xl hover:bg-white hover:text-black ' >upload file</label>
                         <input className='hidden' type="file" name='file_picker' id='file_picker' onChange={(e) => handlechange(e)} />
                     </div>
                 </div>
@@ -80,7 +82,7 @@ function Cheatsheet() {
                     <button onClick={() => setupl(!upl)} className=' fixed right-8 bottom-8 text-white font-bold cursor-pointer border bg-[#461ca7] p-4 rounded-xl hover:bg-white hover:text-black '>{upl ? "Cancel" : "upload file"}</button>
                 </div>
 
-                <div className=' relative p-4 mt-20 mx-4  max-w-[600px] sm:max-w-[800px] bg-[#461ca7] border-4 rounded-xl w-[100%] border-[#ae09dc9f] bg-opacity-[0.9]' >
+                <div className=' relative p-4 mt-20 mx-4  max-w-[600px] sm:max-w-[800px] bg-[#461ca7] border-4 rounded-xl w-[100%] border-[#ae09dc9f] bg-opacity-[0.9] z-[1] ' >
                     <div className=" flex h-[100px] ">
                         <div className="flex flex-col w-full ">
                             <label className='text-white font-bold  text-[18px]' >Subject</label>
@@ -110,7 +112,7 @@ function Cheatsheet() {
                     </div>
                 </div>
 
-                <div className=' relative mt-20 mx-4 max-w-[600px] sm:max-w-[800px] bg-[#461ca7] border-4 rounded-xl w-fit border-[#ae09dc9f] bg-opacity-[0.9]' >
+                <div className={ ` ${photos.length==0? 'hidden' : '' } relative mt-20 mx-4 max-w-[600px] sm:max-w-[800px] bg-[#461ca7] border-4 rounded-xl w-fit border-[#ae09dc9f] bg-opacity-[0.9]`} >
                     <div className=' relative flex flex-wrap items-start justify-start p-14 gap-10' >
                         <>
                             {photos.map(({subject, photo, _id }) => (

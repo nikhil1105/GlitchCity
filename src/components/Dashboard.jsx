@@ -3,6 +3,7 @@ import '../dashboard.css';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { BsCheckLg } from 'react-icons/bs';
 import { StarsCanvas } from './canvas';
+import Nav from './Navbar';
 function Dashboard() {
   const [allTodos, setAllTodos] = useState([]);
   const [newTodoTitle, setNewTodoTitle] = useState('');
@@ -85,6 +86,7 @@ function Dashboard() {
 
   return (
     <div className='main'>
+      <Nav/>
       <div className="App flex items-center justify-center flex-col ">
         <h1 className='text-[50px] text-white pt-16 font-bold ' >Works TO DO</h1>
 

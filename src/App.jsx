@@ -5,10 +5,6 @@ import { Routes , Route } from "react-router-dom";
 import Dashboard from './components/Dashboard';
 import Chatgrp from './components/Chatgrp';
 import Bot from './components/ChatsBot';
-
-
-
-
 import Login from './components/login';
 import Signup from './components/Signup';
 
@@ -16,12 +12,14 @@ import About from './components/About';
 
 import Cheatsheet from './components/Cheatsheet';
 import Home from './components/Home';
-
+import { useLocation } from "react-router-dom";
 
 
 
 function App() {
 
+  const location = useLocation();
+  const currentPath = location.pathname;
   const [isusersign,setusersign] = useState()
   useEffect(()=>{
     setusersign(!!localStorage.getItem('token'))
@@ -29,7 +27,7 @@ function App() {
 
   return (
     <div>
-      <Nav/>
+      
       <Routes>
         <Route path="*" element={<Landingpage/>}/>
         <Route path="/home" element={<Home/>}/>

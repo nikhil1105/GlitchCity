@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import '../Home.css'
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Tilt } from "react-tilt";
+import { StarsCanvas } from './canvas';
+import Nav from './Navbar';
 
 
 
@@ -290,8 +292,8 @@ function Home() {
   
     return (
         <>
-            <div className='h-full w-full text-white bg'>
-                <header className='flex justify-center pt-20 '  >
+            <div className='h-full w-full text-white bg'><Nav/>
+                <header className='flex w-[90vw] justify-center pt-20 '  >
                     <div className='border-4  border-[#ae09dc5f] bg-[#4c20b1] bg-opacity-[0.3]  rounded-xl w-fit p-10 flex flex-col lg:flex-row '>
                         <div>
                             <span className='text-[80px] font-bold capitalize' >
@@ -310,7 +312,7 @@ function Home() {
                         </div>
                     </div>
                 </header>
-                <section className='mx-20 ' >
+                <section className='p-2 sm:px-20 mt-8 sm:mx-20 border-4  border-[#ae09dc5f] bg-[#360c99] bg-opacity-[0.6]  rounded-xl ' >
                     <p className="text-white font-black md:text-[60px] sm:text-[50px] text-[30px]"
                     >Introduction</p>
                     <h2 className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">Overview.</h2><br />
@@ -367,13 +369,13 @@ function Home() {
 
 
                 </section>
-                <footer className="bg-gray-800 text-white my-8 py-8">
-                    <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
+                <footer className="bg-gray-800 text-white mt-8 py-8">
+                    <div className="container px-20 mx-auto flex flex-col md:flex-row justify-between items-center">
                         <div className="mb-4 md:mb-0">
                             <p className="text-sm">&copy; 2024 The GlitchCity . All rights reserved.</p>
                         </div>
                         <div>
-                            <ul className="flex space-x-4">
+                            <ul className="flex justify-center space-x-4">
                                 <li>
                                     <a href="/" className="text-sm hover:text-gray-300">Home</a>
                                 </li>
@@ -401,7 +403,7 @@ function Home() {
                         </div>
                     </div>
                 </footer>
-
+                <StarsCanvas/>
             </div>
         </>
     )

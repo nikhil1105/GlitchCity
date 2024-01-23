@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import { useNavigate,Link } from "react-router-dom";
 import { StarsCanvas } from './canvas';
+import Nav from './Navbar';
 
 function Signup() {
   const [user,setuser]=useState([])
@@ -37,17 +38,17 @@ function Signup() {
   
 
   return (
-    <div className=" main flex items-center justify-center bg-[#222020] w-[100vw] h-[100vh] "  >
+    <div className=" main flex items-center justify-center bg-[#222020] w-[100vw] h-[100vh] "  ><Nav/>
       <form onSubmit={handlesubmit}  className="border-4  border-[#ae09dc9f] p-20 bg-[#4c20b1] max-w-[90vw] bg-opacity-[0.7] rounded-xl">
         <div className="text-[30px] font-bold text-white ">Sign-in </div>
 
         <div className=" m-2 ">
           <div className=" my-2 text-white font-semibold ">Email</div>
-          <input type='email' onChange={(e)=>setemail(e.target.value)} className=" m-2 rounded w-full " name="email" /><br />
+          <input required type='email' onChange={(e)=>setemail(e.target.value)} className=" m-2 rounded w-full " name="email" /><br />
           <div className=" my-2 text-white font-semibold ">Username</div>
-          <input className=" m-2 rounded w-full " onChange={(e)=>setname(e.target.value)} name="username" /><br />
+          <input required className=" m-2 rounded w-full " onChange={(e)=>setname(e.target.value)} name="username" /><br />
           <div className=" my-2 text-white font-semibold ">Password</div>
-          <input type='password' className=" m-2 rounded w-full " onChange={(e)=>setpass(e.target.value)} name="password" /><br />
+          <input required type='password' className=" m-2 rounded w-full " onChange={(e)=>setpass(e.target.value)} name="password" /><br />
 
           <button className="border-2 hover:bg-black bg-[#ae09dc9f] hover:border-white text-white rounded-xl font-bold px-4 py-2 my-4" type="submit">
             Sign-in
