@@ -123,7 +123,6 @@ function Cheatsheet() {
                                             src={`http://localhost:3001/uploads/${photo}`}
                                             alt=""
                                         />
-                                        
                                         </a>
                                         <div className='text-white p-4' >
                                             {subject}

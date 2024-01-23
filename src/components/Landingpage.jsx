@@ -36,7 +36,10 @@ export default function Landingpage() {
 
     return (
         <div className=" h-[200vh] flex justify-center items-top text-center w-full "
-        ><Nav/>
+        >
+        <Nav data={ypos>1.2?'hidden':''} />
+        
+                     
 
         <div className=" fixed h-[100vh] w-full object-cover flex flex-col items-center justify-center " >
 

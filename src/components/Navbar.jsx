@@ -22,7 +22,7 @@ const Nav = () => {
   };
 
   return (
-    <header className=' fixed  py-4 px-4 bg-opacity-[0.5] top-0  z-50 w-full'>
+    <header className=' absolute  py-4 px-4 bg-opacity-[0.5] top-0  z-50 w-full'>
       <nav className=' flex justify-between items-center '>
         <Link to="/" className=' font-bold  text-white'>
           The GlitchCity
