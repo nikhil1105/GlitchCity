@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Nav from './components/Navbar'
+import ReactAudioPlayer from "react-audio-player";
 import Landingpage from './components/Landingpage'
 import { Routes , Route } from "react-router-dom";
 import Dashboard from './components/Dashboard';
@@ -13,6 +13,7 @@ import About from './components/About';
 import Cheatsheet from './components/Cheatsheet';
 import Home from './components/Home';
 import { useLocation } from "react-router-dom";
+import TopBtn from './components/TopBtn';
 
 
 
@@ -27,7 +28,6 @@ function App() {
 
   return (
     <div>
-      
       <Routes>
         <Route path="*" element={<Landingpage/>}/>
         <Route path="/home" element={<Home/>}/>
@@ -39,6 +39,7 @@ function App() {
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/cheatsheet" element={isusersign?<Cheatsheet/>:<Login/>}/>
       </Routes>
+      <TopBtn/>
     </div>
   )
 }

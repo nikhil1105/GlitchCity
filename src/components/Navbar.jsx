@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Bot from './ChatsBot';
+
 
 
 const Nav = () => {
   const [imdobileMenuOpen, setImdobileMenuOpen] = useState(false);
-  const [help,sethelp] = useState(false)
+  const [help, sethelp] = useState(false)
   const navigate = useNavigate()
   const isusersign = !!localStorage.getItem('token')
 
-  const handlesignout = () =>{
+  const handlesignout = () => {
     localStorage.removeItem('token')
     navigate('/login')
   }
 
   const toggleMobileMenu = () => {
     setImdobileMenuOpen(!imdobileMenuOpen);
-    if (help==true) {
+    if (help == true) {
       sethelp(!help)
     }
   };
@@ -27,8 +28,11 @@ const Nav = () => {
         <Link to="/" className=' font-bold  text-white'>
           The GlitchCity
         </Link>
+        <audio autoPlay loop ><source src='../assets/audio.mp3' type='mp3' /></audio>
+
+        
         <ul className={` md:flex justify-center items-center gap-16 hidden `}>
-          
+
           <li>
             <Link
               to='/home'
@@ -62,24 +66,24 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            {isusersign?
-            <button
-              onClick={handlesignout}
-              className=' leading-normal text-lg text-white font-bold hover:text-[#151516]' 
-            >
-              logout
-            </button>:
-            <Link
-            to="/login"
-            className=' leading-normal text-lg text-white font-bold hover:text-[#171718]' 
-          >
-            login
-          </Link>
+            {isusersign ?
+              <button
+                onClick={handlesignout}
+                className=' leading-normal text-lg text-white font-bold hover:text-[#151516]'
+              >
+                logout
+              </button> :
+              <Link
+                to="/login"
+                className=' leading-normal text-lg text-white font-bold hover:text-[#171718]'
+              >
+                login
+              </Link>
             }
           </li>
           <li>
             <button
-              onClick={()=>sethelp(!help)}
+              onClick={() => sethelp(!help)}
               className=' leading-normal text-lg text-white font-bold hover:text-[#1c1c1d]'
             >
               Help
@@ -96,7 +100,7 @@ const Nav = () => {
         </ul>
         <div className='md:hidden'>
           <img
-            src={`./assets/${!imdobileMenuOpen?'hamburger.svg':'close.svg'}`}
+            src={`./assets/${!imdobileMenuOpen ? 'hamburger.svg' : 'close.svg'}`}
             alt="Hamburger"
             className='w-[28px] h-[28px] object-contain cursor-pointer'
             onClick={toggleMobileMenu}
@@ -104,8 +108,8 @@ const Nav = () => {
         </div>
       </nav>
       <div>
-      <ul className={` md:hidden ${imdobileMenuOpen? '':'hidden'}  absolute top-[60px] right-[30px] bg-slate-700 bg-opacity-[0.9] p-4 rounded-2xl`}>
-      <li>
+        <ul className={` md:hidden ${imdobileMenuOpen ? '' : 'hidden'}  absolute top-[60px] right-[30px] bg-slate-700 bg-opacity-[0.9] p-4 rounded-2xl`}>
+          <li>
             <Link
               to='/home'
               className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
@@ -137,26 +141,26 @@ const Nav = () => {
               ChatGroup
             </Link>
           </li>
-          
+
           <li>
-          {isusersign?
-            <button
-              onClick={handlesignout}
-              className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]' 
-            >
-              logout
-            </button>:
-            <Link
-            to="/login"
-            className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]' 
-          >
-            login
-          </Link>
+            {isusersign ?
+              <button
+                onClick={handlesignout}
+                className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
+              >
+                logout
+              </button> :
+              <Link
+                to="/login"
+                className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
+              >
+                login
+              </Link>
             }
           </li>
           <li>
             <button
-              onClick={()=>sethelp(!help)}
+              onClick={() => sethelp(!help)}
               className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
             >
               Help
@@ -172,7 +176,7 @@ const Nav = () => {
           </li>
         </ul>
       </div>
-      <div className={`${help?'':'hidden'}`} ><Bot/></div>
+      <div className={`${help ? '' : 'hidden'}`} ><Bot /></div>
     </header>
   );
 };
