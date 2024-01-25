@@ -14,7 +14,7 @@ function Cheatsheet() {
     useEffect(() => {
         setuser(localStorage.getItem('user'))
         console.log(localStorage.getItem('user'));
-        axios.get('http://localhost:3001/api/get').then((res) => {
+        axios.get('https://glitchcitybackend1.onrender.com/api/get').then((res) => {
             setphotots(res.data)
         }).catch((e) => console.log(e))
 
@@ -22,7 +22,7 @@ function Cheatsheet() {
 
     const search = () => {
 
-        axios.post('http://localhost:3001/api/search', { subject: sub }).then((res) => {
+        axios.post('https://glitchcitybackend1.onrender.com/api/search', { subject: sub }).then((res) => {
             console.log(sub);
             setphotots(res.data)
         }).catch((e) => console.log(e))
@@ -35,7 +35,7 @@ function Cheatsheet() {
         formData.append('subject', sub)
 
 
-        axios.post('http://localhost:3001/api/save', formData, { subject: sub })
+        axios.post('https://glitchcitybackend1.onrender.com/api/save', formData, { subject: sub })
             .then((res) => {
                 setupl(false)
             }).catch((e) => console.log(e))
@@ -117,9 +117,9 @@ function Cheatsheet() {
                             {photos.map(({subject, photo, _id }) => (
                                 <div key={_id} className=" flex flex-col items-center justify-center  w-[250px] border-2 p-4 rounded-md bg-[#ae09dc46] ">
                                     {console.log(photo, _id)}
-                                    <a href={`http://localhost:3001/uploads/${photo}`} target='_blank' >
+                                    <a href={`https://glitchcitybackend1.onrender.com/uploads/${photo}`} target='_blank' >
                                         <img
-                                            src={`http://localhost:3001/uploads/${photo}`}
+                                            src={`https://glitchcitybackend1.onrender.com/uploads/${photo}`}
                                             alt=""
                                         />
                                         </a>
