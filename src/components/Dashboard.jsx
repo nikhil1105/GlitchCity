@@ -88,7 +88,7 @@ function Dashboard() {
     <div className='main'>
       <Nav/>
       <div className="App flex items-center justify-center flex-col ">
-        <h1 className='text-[50px] text-white pt-16 font-bold ' >Works TO DO</h1>
+        <h1 className='text-[50px] text-white pt-16 font-bold ' >Schedule</h1>
 
         <div className="todo-wrapper m-8 bg-[#461ca7] border-4 rounded-xl w-fit border-[#ae09dc9f] bg-opacity-[0.9] ">
 

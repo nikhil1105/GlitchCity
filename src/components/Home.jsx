@@ -79,9 +79,9 @@ const projects = [
         project_link: '/chat'
     },
     {
-        name: "Cheatsheet Page",
+        name: "Event Page",
         description:
-            "Collaborative shortnotes cheatsheet page effortlessly with Node.js, React, and Tailwind CSS for seamless sharing and quick reference.",
+            "Collaborative event page effortlessly with Node.js, React, and Tailwind CSS for seamless sharing and quick reference.",
         tags: [
             {
                 name: "react",
@@ -100,9 +100,9 @@ const projects = [
         project_link: '/cheatsheet'
     },
     {
-        name: "ToDo Page",
+        name: "Schedule Page",
         description:
-            'A React todo page with Tailwind CSS styling, state management, and hosted on localhost for efficient task organization.',
+            'A React Scheldue page with Tailwind CSS styling, state management, and hosted on localhost for efficient task organization.',
         tags: [
             {
                 name: "react",

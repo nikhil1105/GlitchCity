@@ -7,6 +7,7 @@ import ChatsPage from "./ChatsPage";
 function Chatgrp() {
     const [user, setUser] = useState(undefined);
 
+    
 
     if (!user) {
       return <AuthPage onAuth={(user) => setUser(user)} />;

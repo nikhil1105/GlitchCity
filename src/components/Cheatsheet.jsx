@@ -8,13 +8,13 @@ function Cheatsheet() {
     const [photos, setphotots] = useState([])
     const [sub, setsub] = useState('all')
     const [upl, setupl] = useState(false)
-
+    const [user,setuser] = useState('')
 
 
     useEffect(() => {
-
+        setuser(localStorage.getItem('user'))
+        console.log(localStorage.getItem('user'));
         axios.get('http://localhost:3001/api/get').then((res) => {
-            console.log(res.data);
             setphotots(res.data)
         }).catch((e) => console.log(e))
 
@@ -37,7 +37,6 @@ function Cheatsheet() {
 
         axios.post('http://localhost:3001/api/save', formData, { subject: sub })
             .then((res) => {
-                console.log(res);
                 setupl(false)
             }).catch((e) => console.log(e))
     }
@@ -57,16 +56,16 @@ function Cheatsheet() {
                         <label className='p-4 text-[25px] text-white font-bold' htmlFor="">Subject</label>
                         <button className='fixed right-8 top-4 ' onClick={() => setupl(false)}  ><img src="./assets/close.svg" className=' w-[25px] h-[25px] ' /></button>
                         <br />
-                        <select name="class" onChange={e => setsub(e.target.value)} className=' font-bold m-4 ml-4 p-1 rounded' id="class">
+                        <select name="class" onChange={e => setsub(e.target.value)} className={`  font-bold m-4 ml-4 p-1 rounded`} id="class">
                             <option value="all">All</option>
-                            <option value="DSA">DSA</option>
-                            <option value="Algorithm">Algorithm</option>
-                            <option value="Computer-Networks">Computer-Networks</option>
-                            <option value="Digital-Electronics">Digital-Electronics</option>
-                            <option value="Python-programming">Python-programming</option>
-                            <option value=">Web-Technology">Web-Technology</option>
-                            <option value="Advanced-JAVA-Programming">Advanced-JAVA-Programming</option>
-                            <option value="Software-Testing">Software-Testing</option>
+                            <option value="DSA">Cricket</option>
+                            <option value="Algorithm">Baseball</option>
+                            <option value="Computer-Networks">IT Event</option>
+                            <option value="Digital-Electronics">Sport Event</option>
+                            <option value="Python-programming">Game Events</option>
+                            <option value=">Web-Technology">Dance</option>
+                            <option value="Advanced-JAVA-Programming">Singing</option>
+                            <option value="Software-Testing">Stand-up</option>
 
                         </select>
 
@@ -78,8 +77,8 @@ function Cheatsheet() {
                     </div>
                 </div>
 
-                <div className='z-10' >
-                    <button onClick={() => setupl(!upl)} className=' fixed right-8 bottom-8 text-white font-bold cursor-pointer border bg-[#461ca7] p-4 rounded-xl hover:bg-white hover:text-black '>{upl ? "Cancel" : "upload file"}</button>
+                <div className={`z-10 ${user=='student'?'hidden':''} `} >
+                    <button onClick={() => setupl(!upl)} className=' fixed right-8 bottom-20 text-white font-bold cursor-pointer border bg-[#461ca7] p-4 rounded-xl hover:bg-white hover:text-black '>{upl ? "Cancel" : "upload file"}</button>
                 </div>
 
                 <div className=' relative p-4 mt-20 mx-4  max-w-[600px] sm:max-w-[800px] bg-[#461ca7] border-4 rounded-xl w-[100%] border-[#ae09dc9f] bg-opacity-[0.9] z-[1] ' >
@@ -87,15 +86,15 @@ function Cheatsheet() {
                         <div className="flex flex-col w-full ">
                             <label className='text-white font-bold  text-[18px]' >Subject</label>
                             <select name="class" onChange={e => setsub(e.target.value)} className=' font-bold rounded mx-2 p-2 mt-[10px]' id="class">
-                                <option value="all">All</option>
-                                <option value="DSA">DSA</option>
-                                <option value="Algorithm">Algorithm</option>
-                                <option value="Computer-Networks">Computer-Networks</option>
-                                <option value="Digital-Electronics">Digital-Electronics</option>
-                                <option value="Python-programming">Python-programming</option>
-                                <option value="Web-Technology">Web-Technology</option>
-                                <option value="Advanced-JAVA-Programming">Advanced-JAVA-Programming</option>
-                                <option value="Software-Testing">Software-Testing</option>
+                            <option value="all">All</option>
+                            <option value="DSA">Cricket</option>
+                            <option value="Algorithm">Baseball</option>
+                            <option value="Computer-Networks">IT Event</option>
+                            <option value="Digital-Electronics">Sport Event</option>
+                            <option value="Python-programming">Game Events</option>
+                            <option value=">Web-Technology">Dance</option>
+                            <option value="Advanced-JAVA-Programming">Singing</option>
+                            <option value="Software-Testing">Stand-up</option>
 
                             </select>
                         </div>
