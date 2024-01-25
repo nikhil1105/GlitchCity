@@ -15,17 +15,9 @@ function Login() {
   const currentPath = location.pathname;
   
 
-  useEffect(() => {
-    fetchUsers();
-      
-  }, [])
+ 
 
-  const fetchUsers = () => {
-    axios.get('https://glitchcitybackend1.onrender.com/register').then((res) => {
-    }).catch((e) => {
-      console.log('error', e);
-    })
-  }
+ 
 
   const handleLogin = async (event) => {
     event.preventDefault();
