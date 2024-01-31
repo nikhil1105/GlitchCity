@@ -33,7 +33,6 @@ export default function Loginpage() {
       localStorage.setItem('uname',name)
       localStorage.setItem('user','student')
       localStorage.setItem('token', token)
-      window.location.reload();
       
       
     } catch (error) {
