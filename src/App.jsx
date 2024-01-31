@@ -35,7 +35,7 @@ function App() {
         <Route path="/dashboard" element={isusersign?<Dashboard/>:<Loginpage/>}/>
         <Route path="/chat" element={isusersign?<Chatgrp/>:<Loginpage/>}/>
         <Route path="/about" element={<About/>}/>
-        <Route path="/login" element={<Login/>}/>
+        <Route path="/login" element={<Loginpage/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/adminsup" element={<Adminsup/>}/>
         <Route path="/adminlogin" element={<Adminlogin/>}/>
