@@ -3,11 +3,8 @@ import Landingpage from './components/Landingpage'
 import { Routes , Route } from "react-router-dom";
 import Dashboard from './components/Dashboard';
 import Chatgrp from './components/Chatgrp';
-import Login from './components/login';
 import Signup from './components/Signup';
-
 import About from './components/About';
-
 import Cheatsheet from './components/Cheatsheet';
 import Home from './components/Home';
 import { useLocation } from "react-router-dom";
@@ -17,7 +14,7 @@ import Adminlogin from './components/Adminlogin';
 import Userper from './components/userpermission';
 import AdminDashboard from './components/AdminDashboard';
 import Help from './components/Help';
-
+import Loginpage from './components/Loginpage';
 
 
 function App() {
@@ -35,8 +32,8 @@ function App() {
       <Routes>
         <Route path="*" element={<Landingpage/>}/>
         <Route path="/home" element={<Home/>}/>
-        <Route path="/dashboard" element={isusersign?<Dashboard/>:<Login/>}/>
-        <Route path="/chat" element={isusersign?<Chatgrp/>:<Login/>}/>
+        <Route path="/dashboard" element={isusersign?<Dashboard/>:<Loginpage/>}/>
+        <Route path="/chat" element={isusersign?<Chatgrp/>:<Loginpage/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
@@ -44,7 +41,7 @@ function App() {
         <Route path="/adminlogin" element={<Adminlogin/>}/>
         <Route path="/userper" element={<Userper/>}/>
         <Route path="/admindash" element={<AdminDashboard/>}/>
-        <Route path="/cheatsheet" element={isusersign?<Cheatsheet/>:<Login/>}/>
+        <Route path="/cheatsheet" element={isusersign?<Cheatsheet/>:<Loginpage/>}/>
         <Route path="/help" element={<Help/>}/>
       </Routes>
       <TopBtn/>

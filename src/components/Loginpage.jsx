@@ -5,7 +5,7 @@ import { useLocation, useNavigate,Link } from "react-router-dom";
 import { StarsCanvas } from './canvas';
 import Nav from './Navbar';
 
-function Login() {
+export default function Loginpage() {
 
   const [name, setname] = useState('')
   const [pass, setpass] = useState('')
@@ -71,4 +71,4 @@ function Login() {
   )
 }
 
-export default Login
+
