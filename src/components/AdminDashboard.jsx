@@ -9,7 +9,7 @@ function AdminDashboard() {
   useEffect(() => {
     const fetchRequests = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/request-permission');
+        const response = await axios.get('https://glitchcitybackend1.onrender.com/request-permission');
         setRequests(response.data);
 
       } catch (error) {
@@ -22,7 +22,7 @@ function AdminDashboard() {
 
   const handleAcceptRequest = async (userId) => {
     try {
-      await axios.put(`http://localhost:3001/grant-permission/${userId}`);
+      await axios.put(`https://glitchcitybackend1.onrender.com/grant-permission/${userId}`);
       setRequests(requests.filter((request) => request.userId !== userId));
     } catch (error) {
       console.error('Error accepting permission request:', error);

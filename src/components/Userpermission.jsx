@@ -12,7 +12,7 @@ function Userper() {
     event.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:3001/request-permission', { userId });
+      const response = await axios.post('https://glitchcitybackend1.onrender.com/request-permission', { userId });
       setMessage(response.data.msg);
     } catch (error) {
       setMessage(error.response.data.msg);

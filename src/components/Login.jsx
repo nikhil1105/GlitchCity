@@ -15,23 +15,15 @@ function Login() {
   const currentPath = location.pathname;
   
 
-  useEffect(() => {
-    fetchUsers();
-      
-  }, [])
+ 
 
-  const fetchUsers = () => {
-    axios.get('http://localhost:3001/register').then((res) => {
-    }).catch((e) => {
-      console.log('error', e);
-    })
-  }
+ 
 
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
       const response = await axios
-        .post('http://localhost:3001/login', { username: name, password: pass })
+        .post('https://glitchcitybackend1.onrender.com/login', { username: name, password: pass })
       const token = response.data.token
       console.log(response);
       setname('')

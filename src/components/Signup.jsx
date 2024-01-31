@@ -16,7 +16,7 @@ function Signup() {
   },[])
 
   const fetchUsers = () => {
-    axios.get('http://localhost:3001/register').then((res)=>{
+    axios.get('https://glitchcitybackend1.onrender.com/register').then((res)=>{
     }).catch((e)=>{
       console.log('error',e);
     })
@@ -24,7 +24,7 @@ function Signup() {
 
   const handlesubmit= (e) =>{
     e.preventDefault()
-    axios.post('http://localhost:3001/register',{email,username:name,password:pass})
+    axios.post('https://glitchcitybackend1.onrender.com/register',{email,username:name,password:pass})
     .then((res)=>{
       setemail('')
       setname('')

@@ -21,7 +21,7 @@ function Adminlogin() {
   }, [])
 
   const fetchUsers = () => {
-    axios.get('http://localhost:3001/adminreg').then((res) => {
+    axios.get('https://glitchcitybackend1.onrender.com/adminreg').then((res) => {
     console.log(res.data);
     }).catch((e) => {
       console.log('error', e);
@@ -32,7 +32,7 @@ function Adminlogin() {
     event.preventDefault();
     try {
       const response = await axios
-        .post('http://localhost:3001/adminlogin', { username: name, password: pass })
+        .post('https://glitchcitybackend1.onrender.com/adminlogin', { username: name, password: pass })
       const token = response.data.token
       setname('')
       setpass('')

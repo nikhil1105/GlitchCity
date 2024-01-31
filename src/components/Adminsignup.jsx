@@ -15,7 +15,7 @@ function Adminsup() {
   },[])
 
   const fetchUsers = () => {
-    axios.get('http://localhost:3001/adminreg').then((res)=>{
+    axios.get('https://glitchcitybackend1.onrender.com/adminreg').then((res)=>{
         console.log(res.data);
     }).catch((e)=>{
       console.log('error',e);
@@ -24,7 +24,7 @@ function Adminsup() {
 
   const handlesubmit= (e) =>{
     e.preventDefault()
-    axios.post('http://localhost:3001/adminreg',{clgpass,username:name,password:pass})
+    axios.post('https://glitchcitybackend1.onrender.com/adminreg',{clgpass,username:name,password:pass})
     .then((res)=>{
       setname('')
       setpass('')
