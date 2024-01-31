@@ -13,6 +13,7 @@ const Nav = () => {
 
   useEffect(() => {
     setuser(localStorage.getItem('user'))
+    console.log(user);
   })
 
   const handlesignout = () => {
@@ -127,7 +128,7 @@ const Nav = () => {
             </Link>
           </li>
 
-          <li className={`${user=='admin'?'hidden':''}`} >
+          <li className={`${!user=='student'?'hidden':''}`} >
             <Link
               to='/userper'
               className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
@@ -136,7 +137,7 @@ const Nav = () => {
             </Link>
           </li>
 
-          <li className={`${!user=='admin'?'hidden':''}`} >
+          <li className={`${user=='student'?'hidden':''}`} >
             <Link
               to='/admindash'
               className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
@@ -146,12 +147,12 @@ const Nav = () => {
           </li>
 
           <li>
-            <button
-              onClick={() => sethelp(!help)}
+          <Link
+              to='/help'
               className=' leading-normal text-lg text-white font-bold hover:text-[#6793ea]'
             >
               Help
-            </button>
+            </Link>
           </li>
           <li>
             <Link

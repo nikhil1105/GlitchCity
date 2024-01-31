@@ -17,6 +17,7 @@ import Adminsup from './components/Adminsignup';
 import Adminlogin from './components/Adminlogin';
 import Userper from './components/userpermission';
 import AdminDashboard from './components/AdminDashboard';
+import Help from './components/Help';
 
 
 
@@ -35,9 +36,8 @@ function App() {
       <Routes>
         <Route path="*" element={<Landingpage/>}/>
         <Route path="/home" element={<Home/>}/>
-        <Route path="/dashboard" element={<Dashboard/>}/>
-        <Route path="/chat" element={<Chatgrp/>}/>
-        <Route path="/chatbot" element={<Bot/>}/>
+        <Route path="/dashboard" element={isusersign?<Dashboard/>:<Login/>}/>
+        <Route path="/chat" element={isusersign?<Chatgrp/>:<Login/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
@@ -45,7 +45,8 @@ function App() {
         <Route path="/adminlogin" element={<Adminlogin/>}/>
         <Route path="/userper" element={<Userper/>}/>
         <Route path="/admindash" element={<AdminDashboard/>}/>
-        <Route path="/cheatsheet" element={<Cheatsheet/>}/>
+        <Route path="/cheatsheet" element={isusersign?<Cheatsheet/>:<Login/>}/>
+        <Route path="/help" element={<Help/>}/>
       </Routes>
       <TopBtn/>
     </div>

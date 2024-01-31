@@ -42,6 +42,9 @@ function Adminlogin() {
       
       localStorage.setItem('user','admin')
       localStorage.setItem('token', token)
+      window.location.reload();
+
+
     } catch (error) {
       console.log('Login Error', error)
       setmsg(error.response.data.error)

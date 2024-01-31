@@ -74,7 +74,7 @@ const About = () => {
       </div>
 
       
-      <button onClick={()=>settoggle(!toggle)} className=' fixed bottom-10 bg-[#460658] text-white hover:bg-white hover:text-black font-bold border-2 px-4 py-2 rounded-xl' >
+      <button onClick={()=>settoggle(!toggle)} className=' hidden fixed bottom-10 bg-[#460658] text-white hover:bg-white hover:text-black font-bold border-2 px-4 py-2 rounded-xl' >
         Switch
       </button>
       <StarsCanvas />

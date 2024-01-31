@@ -33,7 +33,7 @@ function AdminDashboard() {
   };
 
   return (
-    <div className='main main flex items-center justify-center bg-[#222020] w-[100vw] h-[100vh] gap-10 ' >
+    <div className='main font-bold flex items-center justify-center bg-[#222020] w-[100vw] h-[100vh] gap-10 ' >
       <div className="text-white h-fit border-4  border-[#ae09dc9f] p-20 bg-[#4c20b1] max-w-[90vw]  rounded-xl bg-opacity-[0.7] flex flex-col items-center justify-centerw-[100vw] gap-10 "  > <Nav />
         <h2 className='bg-white text-black p-2 rounded-xl '>All Permission Requests</h2>
         <ul>
