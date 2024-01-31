@@ -28,7 +28,6 @@ export default function Loginpage() {
       console.log(response);
       setname('')
       setpass('')
-      fetchUsers();
       console.log(currentPath);
       navigate(`/${currentPath =='/login' ? 'home' : currentPath}`)
       localStorage.setItem('uname',name)
