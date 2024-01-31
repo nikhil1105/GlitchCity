@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import { useMultiChatLogic } from "react-chat-engine-advanced";
-// import { PrettyChatWindow } from 'react-chat-engine-pretty';
+import { PrettyChatWindow } from 'react-chat-engine-pretty';
 
 
 function ChatsPage(props) {
@@ -24,13 +24,13 @@ function ChatsPage(props) {
     //     <MultiChatWindow {...chatprops} style={{height:"100%"}} />
     // </div>
     <div className=' h-[100vh]' >
-      {/* <button onClick={() => navigate('/home')} className='fixed hover:bg-black hover:text-white font-bold bg-white rounded-md p-2 bottom-4 left-4 ' > Go Back </button>
+      <button onClick={() => navigate('/home')} className='fixed hover:bg-black hover:text-white font-bold bg-white rounded-md p-2 bottom-4 left-4 ' > Go Back </button>
       <PrettyChatWindow
         projectId="0d484187-81b3-47aa-917f-2d26123683f3"
         username={props.user.username}
         secret={props.user.secret}
         style={{ height: '100%' }}
-      /> */}
+      />
     </div>
   )
 }
