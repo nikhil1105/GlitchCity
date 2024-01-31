@@ -11,7 +11,7 @@ import { useLocation } from "react-router-dom";
 import TopBtn from './components/TopBtn';
 import Adminsup from './components/Adminsignup';
 import Adminlogin from './components/Adminlogin';
-import Userper from './components/userpermission';
+import Userper from './components/Userpermission';
 import AdminDashboard from './components/AdminDashboard';
 import Help from './components/Help';
 import Loginpage from './components/Loginpage';
