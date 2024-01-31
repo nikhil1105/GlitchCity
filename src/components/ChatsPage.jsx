@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
-import { MultiChatSocket, SingleChatSocket, MultiChatWindow, useMultiChatLogic } from "react-chat-engine-advanced";
+import { useMultiChatLogic } from "react-chat-engine-advanced";
 import { PrettyChatWindow } from 'react-chat-engine-pretty';
 
 
