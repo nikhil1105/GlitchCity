@@ -3,7 +3,6 @@ import Landingpage from './components/Landingpage'
 import { Routes , Route } from "react-router-dom";
 import Dashboard from './components/Dashboard';
 import Chatgrp from './components/Chatgrp';
-import Bot from './components/ChatsBot';
 import Login from './components/login';
 import Signup from './components/Signup';
 
